@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.signup = signup
   window.login = login
   window.logout = logout
-  
+
   const root = document.getElementById("root");
-  ReactDOM.render(<h1>Test</h1>, root);
+  ReactDOM.render(<h1>Cloudcast</h1>, root);
 });

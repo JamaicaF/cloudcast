@@ -26,8 +26,19 @@ const receiveErrors = (errors) => {
 
 export const login = (user) => {
   return dispatch => {
-    return SessionApiUtil.login(user).then((user) => {
-      return dispatch(receiveCurrentUser(user));
+    return SessionApiUtil.login(user).then((currentUser) => {
+      return dispatch(receiveCurrentUser(currentUser));
+    }), err => {
+      return dispatch(receiveErrors(err.responseJSON));
+    };
+  };
+};
+
+
+export const signup = (user) => {
+  return dispatch => {
+    return SessionApiUtil.signup(user).then((currentUser) => {
+      return dispatch(receiveCurrentUser(currentUser));
     }), err => {
       return dispatch(receiveErrors(err.responseJSON));
     };
@@ -38,18 +49,6 @@ export const logout = () => {
   return dispatch => {
     return SessionApiUtil.logout().then(() => {
       return dispatch(logoutCurrentUser());
-    }), err => {
-      return dispatch(receiveErrors(err.responseJSON));
-    };
-  };
-};
-
-export const signup = (user) => {
-  return dispatch => {
-    return SessionApiUtil.signup(user).then((user) => {
-      return dispatch(receiveCurrentUser(user));
-    }), err => {
-      return dispatch(receiveErrors(err.responseJSON));
-    };
+    });
   };
 };
