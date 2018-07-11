@@ -1,9 +1,13 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 const App = () => (
   <div>
-    <h1>Cloudcast</h1>
+    <header>
+      <h1>Cloudcast</h1>
+    </header>
+    <Switch>
+    </Switch>
   </div>
 );
 
