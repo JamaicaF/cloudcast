@@ -13,3 +13,62 @@
  *= require_tree .
  *= require_self
  */
+
+ html, body, section, article, h1, h2, h3, p {
+   margin: 0;
+   border: 0;
+   padding: 0;
+   font: inherit;
+   text-align: inherit;
+   text-decoration: inherit;
+   color: inherit;
+   background: transparent;
+ }
+
+ .cf {
+   content: "";
+   display: block;
+   clear: both;
+ }
+
+ .modal-background {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   background: rgba(0, 0, 0, 0.7);
+   z-index: 10;
+ }
+
+ .modal-child {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   min-width: 300px;
+   padding: 20px;
+   background: #f5f9fc;
+   border: solid 1px black;
+   border-radius: 4px;
+   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+ }
+
+.login-input {
+  width: 100%;
+  padding: 12px 0;
+  margin: 10px;
+  border: 1px solid rgba(10,30,44,.15);
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(10,30,44,.05);
+}
+
+.session-submit {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px 0;
+  background: #50b348;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+}

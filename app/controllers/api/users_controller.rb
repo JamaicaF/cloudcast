@@ -22,7 +22,7 @@ class Api::UsersController < ApplicationController
       render json: @user.errors.full_messages, status: 406
     end
   end
-  
+
   private
 
   def user_params

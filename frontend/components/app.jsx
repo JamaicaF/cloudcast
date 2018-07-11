@@ -8,6 +8,7 @@ import LogInFormContainer from './session_form/login_form_container';
 
 const App = () => (
   <div>
+    <Modal />
     <header>
       <h1>Cloudcast</h1>
       <NavBarContainer />
