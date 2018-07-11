@@ -1,13 +1,16 @@
 import React from 'react';
 
 const NavBar = ({ currentUser, logout, openModal }) => {
-
+  debugger
   const sessionLinks = () => (
     <nav className="login-signup">
-      <button onClick={() => openModal('login')}>Log in</button>
-      <button onClick={() => openModal('signup')}>Sign up</button>
+      <span onClick={() => openModal('login')}>Log in</span>
+      or
+      <button className="blue-button"
+        onClick={() => openModal('signup')}>Sign up</button>
     </nav>
   );
+
   const userAvatar = () => (
     <hgroup className="user-avatar">
       <h2 className="user-name">{currentUser.username}</h2>
