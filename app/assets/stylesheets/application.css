@@ -61,6 +61,13 @@
    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
  }
 
+.modal-header {
+  display: flex;
+  justify-content: space-around;
+  color: #586573;
+  font-size: 13px;
+}
+
 .login-signup {
   float: right;
   width: 180px;
@@ -91,6 +98,7 @@
 
 .session-submit {
   font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
   width: 100%;
   margin-bottom: 12px;
   padding: 12px 0;

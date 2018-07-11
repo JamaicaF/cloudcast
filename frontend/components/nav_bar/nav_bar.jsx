@@ -1,7 +1,6 @@
 import React from 'react';
 
 const NavBar = ({ currentUser, logout, openModal }) => {
-  debugger
   const sessionLinks = () => (
     <nav className="login-signup">
       <span onClick={() => openModal('login')}>Log in</span>
