@@ -35,7 +35,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    closeModal: () => return dispatch(closeModal())
+    closeModal: () => {
+      return dispatch(closeModal())
+    }
   };
 };
 
