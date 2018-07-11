@@ -28,9 +28,9 @@ export const login = (user) => {
   return dispatch => {
     return SessionApiUtil.login(user).then((currentUser) => {
       return dispatch(receiveCurrentUser(currentUser));
-    }), err => {
-      return dispatch(receiveErrors(err.responseJSON));
-    };
+    }, (error) => {
+      return dispatch(receiveErrors(error));
+    });
   };
 };
 
@@ -39,9 +39,9 @@ export const signup = (user) => {
   return dispatch => {
     return SessionApiUtil.signup(user).then((currentUser) => {
       return dispatch(receiveCurrentUser(currentUser));
-    }), err => {
-      return dispatch(receiveErrors(err.responseJSON));
-    };
+    }, (error) => {
+      return dispatch(receiveErrors(error));
+    });
   };
 };
 

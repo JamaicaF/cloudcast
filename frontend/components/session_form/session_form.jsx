@@ -37,11 +37,11 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         {this.props.otherForm}
+        {this.props.formType}
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.props.formType}
           <div onClick={this.props.closeModal} className="close-x">X</div>
           {this.renderErrors()}
-
+          debugger
           <div className="login-form">
             <br/>
 
