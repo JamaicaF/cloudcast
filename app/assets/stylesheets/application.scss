@@ -24,7 +24,7 @@
  html {
    display: block;
    /* background: rgba(39,58,75,.97); */
-   background-image: url('towers_blue.jpg');
+   background-image: image-url('towers_blue.jpg');
    color: white;
    font-family: 'Open Sans', sans-serif;
  }
@@ -35,6 +35,8 @@
   font-weight: 600;
   font-size: 20px;
 }
+
+
 
 button {
   color: white;
