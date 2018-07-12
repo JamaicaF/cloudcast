@@ -2,7 +2,7 @@ import React from 'react';
 
 const NavBar = ({ currentUser, logout, openModal }) => {
   const sessionLinks = () => (
-    <nav className="login-signup">
+    <nav className="nav-start-session">
       <span onClick={() => openModal('login')}>Log in</span>
       or
       <button className="blue-button"
