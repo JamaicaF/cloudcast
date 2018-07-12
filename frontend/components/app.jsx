@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { AuthRoute, ProtectedRoute } from '../util/route_util.jsx';
 
 import Splash from './splash';
@@ -11,18 +12,43 @@ import LogInFormContainer from './session_form/login_form_container';
 
 import CloudcastIndexContainer from './main_page/cloudcast_index_container';
 
-const App = () => (
+const App = ({ loggedIn }) => (
   <div>
     <Modal />
     <header>
-      <h1 className="logo">Cloudcast</h1>
       <NavBarContainer />
-      <Route exact path="" component={Splash} />
-      <Route path="" component={CloudcastIndexContainer} />
     </header>
+
     <Switch>
+      <Route path="/" exact render={(props => (
+          loggedIn ? (
+            <CloudcastIndexContainer />
+          ): (
+            <Splash />
+          )
+        ))} />
     </Switch>
   </div>
 );
 
-export default App;
+// export default App;
+//
+// const StartPage = state => (
+//   <Route path={path} render={(props) => (
+//   (loggedIn) ? (
+//     <Redirect to="/" component={CloudcastIndexContainer} />
+//   ) : (
+//     <Redirect to="/" component={Splash}>
+//     )
+//   )} />
+// );
+
+
+const mapStateToProps = state => {
+  return {
+    loggedIn: Boolean(state.session.id)
+  };
+};
+
+const AppContainer = withRouter(connect(mapStateToProps)(App));
+export default AppContainer;

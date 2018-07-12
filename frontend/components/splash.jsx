@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 class Splash extends React.Component {
 
@@ -14,7 +14,8 @@ class Splash extends React.Component {
 
         <button className="blue-button">Start Listening</button>
         <br />
-        <h3 className="splash-tagline">or sign up with your email</h3>
+        <span className="splash-tagline span-input">
+          or sign up with your email</span>
       </div>
     );
   }

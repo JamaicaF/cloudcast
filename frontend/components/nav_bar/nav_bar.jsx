@@ -1,10 +1,16 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = ({ currentUser, logout, openModal }) => {
   const sessionLinks = () => (
     <nav className="nav-start-session">
-      <span onClick={() => openModal('login')}>Log in</span>
-      or
+      <span className="span-input"
+        onClick={() => openModal('login')}>Log in</span>
+
+      <span className="nav-el">
+        or
+      </span>
+
       <button className="blue-button"
         onClick={() => openModal('signup')}>Sign up</button>
     </nav>
@@ -17,10 +23,19 @@ const NavBar = ({ currentUser, logout, openModal }) => {
     </hgroup>
   );
 
+  const renderNavOptions = () => (
+    <div>
+      <NavLink className="logo" to="/">Cloudcast</NavLink>
+      <NavLink className="nav-link" to="/upload/">UPLOAD</NavLink>
+      <NavLink className="nav-link" to="/discover/">DISCOVER</NavLink>
+    </div>
+  );
+
   return (
-    currentUser ?
-    userAvatar(currentUser, logout) :
-    sessionLinks()
+    <div className="nav-bar">
+      {renderNavOptions()}
+      {currentUser ? userAvatar(currentUser, logout) : sessionLinks()}
+    </div>
   );
 };
 
