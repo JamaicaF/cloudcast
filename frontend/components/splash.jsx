@@ -1,5 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { openModal } from '../actions/modal_actions';
 
 class Splash extends React.Component {
 
@@ -19,11 +22,19 @@ class Splash extends React.Component {
         <button className="blue-button"
           onClick={this.handleClick.bind(this)}>Start Listening</button>
         <br />
-        <span className="splash-tagline span-input">
+        <span className="splash-tagline span-input"
+          onClick={() => this.props.openModal('signup')}>
           or sign up with your email</span>
       </div>
     );
   }
 }
 
-export default withRouter(Splash);
+const mapDispatchToProps = dispatch => {
+  return {
+    openModal: (modal) => dispatch(openModal(modal))
+  };
+};
+
+const SplashContainer = withRouter(connect(null, mapDispatchToProps)(Splash));
+export default SplashContainer;
