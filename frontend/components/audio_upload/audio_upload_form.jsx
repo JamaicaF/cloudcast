@@ -3,7 +3,7 @@ import React from 'react';
 class AudioUploadForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.post;
+    this.state = this.props.cloudcast;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -18,14 +18,16 @@ class AudioUploadForm extends React.Component {
         <h2>
           Upload Radio Shows, DJ Mixes & Podcasts
         </h2>
-        <form>
-          <button></button>
+        <form onSubmit={this.handleSubmit}>
+
+          <button onClick></button>
+
           <input type="text"
             placeholder="Choose a title for your upload"
             value={this.state.title}
-            onChange={}
             />
-          <button></button>
+
+          <button onClick></button>
         </form>
       </div>
     )

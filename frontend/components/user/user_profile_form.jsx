@@ -5,7 +5,7 @@ class UserProfileForm extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = this.props.post;
+    this.state = this.props.user;
     this.handleSubmit = this.handleSubmit.bind(this);
 
   }
@@ -42,17 +42,17 @@ class UserProfileForm extends React.Component {
 
           <label><strong>Profile Picture</strong>
             JPEG, GIF or PNG, 10MB max.
-            <button>Choose file</button>
+            <button onClick>Choose file</button>
           </label>
 
           <label><strong>Cover Picture</strong>
             Must be at least 1460px wide and 370px tall.
             Avoid using text within your cover image, as
             it could be cropped on smaller screens.
-            <button>Choose file</button>
+            <button onClick>Choose file</button>
           </label>
 
-          <button>Save Profile Settings</button>
+          <button onClick>Save Profile Settings</button>
         </form>
       </div>
     );
