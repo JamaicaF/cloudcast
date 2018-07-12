@@ -20,14 +20,14 @@ class AudioUploadForm extends React.Component {
         </h2>
         <form onSubmit={this.handleSubmit}>
 
-          <button onClick></button>
+          <button></button>
 
           <input type="text"
             placeholder="Choose a title for your upload"
             value={this.state.title}
             />
 
-          <button onClick></button>
+          <button></button>
         </form>
       </div>
     )

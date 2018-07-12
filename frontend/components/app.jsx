@@ -12,6 +12,8 @@ import LogInFormContainer from './session_form/login_form_container';
 
 import CloudcastIndexContainer from './main_page/cloudcast_index_container';
 
+import AudioUploadFormContainer from './audio_upload/audio_upload_form_container';
+
 const App = ({ loggedIn }) => (
   <div>
     <Modal />
@@ -27,6 +29,8 @@ const App = ({ loggedIn }) => (
             <Splash />
           )
         ))} />
+      <Route path="/discover/" component={CloudcastIndexContainer} />
+      <Route path="/upload/" component={AudioUploadFormContainer} />
     </Switch>
   </div>
 );

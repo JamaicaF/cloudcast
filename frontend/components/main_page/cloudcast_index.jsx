@@ -17,9 +17,8 @@ class CloudcastIndex extends React.Component {
 
     return (
       <div>
-        <h2>Feed</h2>
+        <h2>Featured</h2>
         <ul>
-          // {}
         </ul>
       </div>
     );

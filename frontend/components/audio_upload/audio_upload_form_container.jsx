@@ -1,4 +1,4 @@
-import { connect } from 'react-readux';
+import { connect } from 'react-redux';
 import AudioUploadForm from './audio_upload_form';
 
 const mapStateToProps = state => {

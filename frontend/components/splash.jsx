@@ -1,7 +1,11 @@
 import React from 'react';
-// import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class Splash extends React.Component {
+
+  handleClick() {
+    this.props.history.push('/discover/');
+  }
 
   render() {
     return (
@@ -12,7 +16,8 @@ class Splash extends React.Component {
             the best DJs and radio presenters in the world</h3>
         </div>
 
-        <button className="blue-button">Start Listening</button>
+        <button className="blue-button"
+          onClick={this.handleClick.bind(this)}>Start Listening</button>
         <br />
         <span className="splash-tagline span-input">
           or sign up with your email</span>
@@ -21,4 +26,4 @@ class Splash extends React.Component {
   }
 }
 
-export default Splash;
+export default withRouter(Splash);
