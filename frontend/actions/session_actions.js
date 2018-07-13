@@ -20,7 +20,7 @@ const logoutCurrentUser = () => {
 const receiveErrors = (errors) => {
   return {
     type: RECEIVE_SESSION_ERRORS,
-    errors: errors.responseJSON,
+    errors,
   };
 };
 
@@ -29,18 +29,17 @@ export const login = (user) => {
     return SessionApiUtil.login(user).then((currentUser) => {
       return dispatch(receiveCurrentUser(currentUser));
     }, (error) => {
-      return dispatch(receiveErrors(error));
+      return dispatch(receiveErrors(error.responseJSON));
     });
   };
 };
-
 
 export const signup = (user) => {
   return dispatch => {
     return SessionApiUtil.signup(user).then((currentUser) => {
       return dispatch(receiveCurrentUser(currentUser));
     }, (error) => {
-      return dispatch(receiveErrors(error));
+      return dispatch(receiveErrors(error.responseJSON));
     });
   };
 };
@@ -50,5 +49,11 @@ export const logout = () => {
     return SessionApiUtil.logout().then(() => {
       return dispatch(logoutCurrentUser());
     });
+  };
+};
+
+export const errorClear = () => {
+  return dispatch => {
+    return dispatch(receiveErrors([]));
   };
 };
