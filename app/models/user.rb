@@ -20,7 +20,7 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_many :cloudcasts
+  has_many :casts
 
   after_initialize :ensure_session_token
 

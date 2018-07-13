@@ -1,4 +1,4 @@
-class Cloudcast < ApplicationRecord
+class Cast < ApplicationRecord
   validates :title, :user_id, presence: true
 
   belongs_to :user

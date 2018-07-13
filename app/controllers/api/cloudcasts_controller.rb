@@ -1,41 +1,41 @@
-class Api::CloudcastsController < ApplicationController
+class Api::CastsController < ApplicationController
 
   def index
-    @cloudcasts = Cloudcast.all
+    @casts = Cast.all
   end
 
   def show
-    @cloudcast = Cloudcast.find(params[:id])
+    @cast = Cast.find(params[:id])
   end
 
   def create
-    @cloudcast = Cloudcast.new(cloudcast_params)
-    @cloudcast.user_id = current_user.id
-    if @cloudcast.save
+    @cast = Cast.new(cast_params)
+    @cast.user_id = current_user.id
+    if @cast.save
       render :show
     else
-      render json: @cloudcast.errors.full_messages, status: 422
+      render json: @cast.errors.full_messages, status: 422
     end
   end
 
   def update
-    @cloudcast = current_user.cloudcasts.find(params[:id])
+    @cast = current_user.casts.find(params[:id])
     if @link.update(link_params)
       render :show
     else
-      render json: @cloudcast.errors.full_messages, status: 406
+      render json: @cast.errors.full_messages, status: 406
     end
   end
 
   def destroy
-    @cloudcast = Cloudcast.find(params[:id])
-    @cloudcast.destroy
+    @cast = cast.find(params[:id])
+    @cast.destroy
     render :index
   end
 
   private
 
-  def cloudcast_params
-    params.require(:cloudcast).permit(:title, :description)
+  def cast_params
+    params.require(:cast).permit(:title, :description)
   end
 end
