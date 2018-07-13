@@ -4,6 +4,7 @@ button {
   border-radius: 4px;
   border: 0;
   font-size: 12px;
+  text-align: center;
 }
 
 .blue-button {
@@ -13,18 +14,10 @@ button {
 }
 
 .green-button {
+  text-align: center;
+  color: white;
   background: #50b348;
-  width: 100%;
   margin-bottom: 12px;
   padding: 12px 0;
   border-radius: 4px;
-}
-
-.login-form-input {
-  color: black;
-  width: 100%;
-  margin: 10px;
-  border: 1px solid rgba(10,30,44,.15);
-  border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(10,30,44,.05);
 }
