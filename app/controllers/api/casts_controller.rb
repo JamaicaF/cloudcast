@@ -30,7 +30,7 @@ class Api::CastsController < ApplicationController
   def destroy
     @cast = cast.find(params[:id])
     @cast.destroy
-    render 'api/users/show.json.jbuilder'
+    render json: {}
   end
 
   private
