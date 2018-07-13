@@ -17,10 +17,12 @@ const NavBar = ({ currentUser, logout, openModal }) => {
   );
 
   const userAvatar = () => (
-    <hgroup className="user-avatar">
+    <nav className="user-avatar">
       <h2 className="user-name">{currentUser.username}</h2>
-      <button onClick={logout}>Log out</button>
-    </hgroup>
+
+      <button className="blue-button"
+        onClick={logout}>Log out</button>
+    </nav>
   );
 
   const renderNavOptions = () => (
