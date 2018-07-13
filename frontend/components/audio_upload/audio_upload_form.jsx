@@ -3,7 +3,7 @@ import React from 'react';
 class AudioUploadForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.cloudcast;
+    this.state = this.props.cast;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 

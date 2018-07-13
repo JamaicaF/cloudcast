@@ -1,16 +1,15 @@
-
 import { connect } from 'react-redux';
 import AudioSubmissionForm from './audio_submission_form';
 
 const mapStateToProps = state => {
   return {
-    cloudcast: {}
+    cast: {}
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    action: (cloudcast) => {
+    action: (cast) => {
       return dispatch();
     }
   };

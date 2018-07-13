@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class AudioSubmissionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.cloudcast;
+    this.state = this.props.cast;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -17,7 +17,7 @@ class AudioSubmissionForm extends React.Component {
     return(
       <div>
         <h2>
-          Uploading {this.state.cloudcast}
+          Uploading {this.state.cast}
         </h2>
         <form onSubmit={this.handleSubmit}>
           <input type="text"

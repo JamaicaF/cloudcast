@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import AudioUploadForm from './audio_upload_form';
+import { fetchCasts } from '../../actions/cast_actions';
 
 const mapStateToProps = state => {
   return {
-    cloudcast: {
+    cast: {
       title: "",
     }
   };
@@ -11,7 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    action: (cloudcast) => {
+    action: (cast) => {
       return dispatch();
     }
   };

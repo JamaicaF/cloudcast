@@ -10,7 +10,7 @@ import Modal from './modal/modal';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 
-import CloudcastIndexContainer from './main_page/cloudcast_index_container';
+import CastIndexContainer from './casts/cast_index_container';
 
 import AudioUploadFormContainer from './audio_upload/audio_upload_form_container';
 
@@ -24,12 +24,12 @@ const App = ({ loggedIn }) => (
     <Switch>
       <Route path="/" exact render={((props) => (
           loggedIn ? (
-            <CloudcastIndexContainer />
+            <CastIndexContainer />
           ): (
             <SplashContainer />
           )
         ))} />
-      <Route path="/discover/" component={CloudcastIndexContainer} />
+      <Route path="/discover/" component={CastIndexContainer} />
       <Route path="/upload/" component={AudioUploadFormContainer} />
     </Switch>
   </div>
