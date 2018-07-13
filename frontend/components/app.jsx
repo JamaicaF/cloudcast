@@ -22,7 +22,7 @@ const App = ({ loggedIn }) => (
     </header>
 
     <Switch>
-      <Route path="/" exact render={(props => (
+      <Route path="/" exact render={((props) => (
           loggedIn ? (
             <CloudcastIndexContainer />
           ): (
