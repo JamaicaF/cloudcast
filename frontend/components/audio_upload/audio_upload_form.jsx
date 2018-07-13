@@ -27,11 +27,16 @@ class AudioUploadForm extends React.Component {
     return(
       <div>
         <h2>
-          Upload Radio Shows, DJ Mixes & Podcasts
+          Upload
         </h2>
-        
+
         <form onSubmit={this.handleSubmit}>
 
+          <h3 className="">Please choose an audio file -
+            MP3, AAC, M4A, MP4 audio or OGG types are accepted.</h3>
+          <br />
+          <h3 className="">Mixcloud is for Radio Shows, DJ Mixes & Podcasts.
+            Single tracks, mashups & full albums are not permitted</h3>
 
           <input type="text"
             className="login-form-input"
