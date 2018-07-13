@@ -5,6 +5,17 @@ class AudioUploadForm extends React.Component {
     super(props);
     this.state = this.props.cast;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTitleChange = this.handleTitleChange.bind(this);
+  }
+
+  handleTitleChange(e) {
+    this.setState({
+      title:e.target.value
+    });
+  }
+
+  handleFile(e) {
+
   }
 
   handleSubmit(e) {
@@ -18,16 +29,19 @@ class AudioUploadForm extends React.Component {
         <h2>
           Upload Radio Shows, DJ Mixes & Podcasts
         </h2>
+        
         <form onSubmit={this.handleSubmit}>
 
-          <button></button>
 
           <input type="text"
+            className="login-form-input"
             placeholder="Choose a title for your upload"
             value={this.state.title}
+            onChange={this.handleTitleChange}
             />
+          <br/>
 
-          <button></button>
+          <button>Upload</button>
         </form>
       </div>
     )
@@ -35,3 +49,9 @@ class AudioUploadForm extends React.Component {
 }
 
 export default AudioUploadForm;
+
+//   <input type="file"
+//     className="blue-button"
+//     value={"Choose File"}
+//     onChange={this.handleFile}
+//   />

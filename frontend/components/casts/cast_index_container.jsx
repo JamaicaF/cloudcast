@@ -4,7 +4,7 @@ import { fetchCasts } from '../../actions/cast_actions';
 
 const mapStateToProps = state => {
   return {
-    casts: Objects.values(state.casts)
+    casts: Object.values(state.entities.casts)
   };
 };
 

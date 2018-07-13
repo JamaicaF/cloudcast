@@ -5,10 +5,11 @@ export const RECEIVE_CAST = 'RECEIVE_CAST';
 export const REMOVE_CAST = 'REMOVE_CAST';
 export const RECEIVE_CAST_ERRORS = "RECEIVE_CAST_ERRORS";
 
-const receiveAllCasts = (casts) => {
+const receiveAllCasts = ({ casts, users }) => {
   return {
     type: RECEIVE_ALL_CASTS,
-    casts
+    casts: casts,
+    users: users
   };
 };
 
