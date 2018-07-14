@@ -28,6 +28,27 @@ class Splash extends React.Component {
           <span className="splash-tagline span-input"
             onClick={() => this.props.openModal('signup')}>
             or sign up with your email</span>
+          <br />
+
+          <div className="splash-three-assets">
+            <div className="splash-asset-cell">
+              <h2 className="splash-asset-title">RE-DISCOVER RADIO</h2>
+              <h3 className="splash-tagline">The largest collection of radio shows,
+                Podcasts & DJ mixes</h3>
+            </div>
+
+            <div className="splash-asset-cell">
+              <h2 className="splash-asset-title">LISTEN ANYWHERE</h2>
+              <h3 className="splash-tagline">Get the free Cloudcast mobile app
+                in your pocket</h3>
+            </div>
+
+            <div className="splash-asset-cell">
+              <h2 className="splash-asset-title">UNLIMITED UPLOADS</h2>
+              <h3 className="splash-tagline">You're free to upload and listen
+                as much as you like</h3>
+            </div>
+          </div>
         </div>
       </div>
     );
