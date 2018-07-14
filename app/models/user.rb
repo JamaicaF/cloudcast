@@ -22,6 +22,9 @@ class User < ApplicationRecord
 
   has_many :casts
 
+  has_one_attached :profile_image
+  has_one_attached :cover_image
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(username, password)

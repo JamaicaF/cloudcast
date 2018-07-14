@@ -15,4 +15,7 @@ class Cast < ApplicationRecord
 
   belongs_to :user
 
+  has_one_attached :cast_audio
+  has_one_attached :cast_image
+
 end
