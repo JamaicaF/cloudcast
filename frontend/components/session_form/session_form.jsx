@@ -6,10 +6,13 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      email:"",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.renderEmail = this.renderEmail.bind(this);
+    this.renderFooter = this.renderFooter.bind(this);
   }
 
   componentDidMount() {
@@ -29,13 +32,59 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error,idx) => (
-          <li key={`error: ${idx}`}>{error}</li>
-        ))}
-      </ul>
-    );
+    if (this.props.errors) {
+      return (
+        <ul className="modal-errors">
+          {this.props.errors.map((error,idx) => (
+            <li key={`error: ${idx}`}>{error}</li>
+          ))}
+        </ul>
+      )
+    }
+  }
+
+  renderEmail() {
+    if (this.props.formType === 'Sign Up') {
+      return (
+        <input type="text"
+          className="modal-form-input"
+          placeholder="Enter email"
+          value={this.state.email}
+          onChange={this.update('email')}
+        />
+      )
+    }
+  }
+
+  renderFooter() {
+    if (this.props.formType === 'Sign Up') {
+      return (
+          <div>
+            <div className="modal-footer">
+              <h2 className="modal-footer-text">Already using Cloudcast?</h2>
+              <span className="modal-footer-toggle span-input">
+                &nbsp; Log in here.</span>
+            </div>
+          <br/>
+
+          <h2 className="modal-footer-text">
+            By signing up for a Cloudcast account, you
+          <br />
+            agree to our Terms & Conditions of use.
+          </h2>
+        </div>
+      )
+    } else {
+      return (
+        <div className="modal-footer">
+          <h2 className="modal-footer-text">
+            New to Cloudcast? You can</h2>
+          <span className="modal-footer-toggle span-input">
+            &nbsp; sign up here.</span>
+        </div>
+
+      )
+    }
   }
 
   render () {
@@ -43,39 +92,38 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <section className="modal-header">
           <ul className="modal-list span-input">
-            <li>{this.props.otherForm}</li>
-            <li>{this.props.formType}</li>
-            <li>
-              <span onClick={this.props.closeModal}>&times;</span>
-            </li>
+            <li>{this.props.loginForm}</li>
+            <li>{this.props.signupForm}</li>
+            <span onClick={this.props.closeModal}>&times;</span>
           </ul>
         </section>
 
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.renderErrors()}
-          <div className="login-form">
-            <br/>
+        <form onSubmit={this.handleSubmit} className="login-form">
+          <div className="modal-body">
+            {this.renderErrors()}
 
-              <input type="text"
-                className="login-form-input"
-                placeholder="Enter your username"
-                value={this.state.username}
-                onChange={this.update('username')}
-                />
-            <br/>
+            {this.renderEmail()}
 
-              <input type="password"
-                className="login-form-input"
-                placeholder="Enter your password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                />
-            <br/>
+            <input type="text"
+              className="modal-form-input"
+              placeholder="Enter your username"
+              value={this.state.username}
+              onChange={this.update('username')}
+              />
+
+            <input type="password"
+              className="modal-form-input"
+              placeholder="Enter your password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              />
 
             <input type="submit"
-              className="login-submit green-button"
+              className="modal-submit"
               value={this.props.formType}
             />
+
+            {this.renderFooter()}
           </div>
         </form>
       </div>

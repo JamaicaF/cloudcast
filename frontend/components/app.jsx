@@ -6,7 +6,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util.jsx';
 import SplashContainer from './splash';
 import NavBarContainer from './nav_bar/nav_bar_container';
 
-import Modal from './modal/modal';
+import Modal from './session_form/modal';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 
