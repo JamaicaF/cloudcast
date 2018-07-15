@@ -62,7 +62,8 @@ class SessionForm extends React.Component {
           <div>
             <div className="modal-footer">
               <h2 className="modal-footer-text">Already using Cloudcast?</h2>
-              <span className="modal-footer-toggle span-input">
+              <span className="modal-footer-toggle span-input"
+                onClick={this.props.loginForm}>
                 &nbsp; Log in here.</span>
             </div>
           <br/>
@@ -79,7 +80,8 @@ class SessionForm extends React.Component {
         <div className="modal-footer">
           <h2 className="modal-footer-text">
             New to Cloudcast? You can</h2>
-          <span className="modal-footer-toggle span-input">
+          <span className="modal-footer-toggle span-input"
+            onClick={this.props.signupForm}>
             &nbsp; sign up here.</span>
         </div>
 
@@ -92,8 +94,8 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <section className="modal-header">
           <ul className="modal-list span-input">
-            <li>{this.props.loginForm}</li>
-            <li>{this.props.signupForm}</li>
+            <span onClick={this.props.loginForm}>Log In</span>
+            <span onClick={this.props.signupForm}>Sign Up</span>
             <span onClick={this.props.closeModal}>&times;</span>
           </ul>
         </section>
