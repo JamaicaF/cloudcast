@@ -12,3 +12,34 @@ button {
   font-weight: 800;
   padding: 8px 16px;
 }
+
+.green-button {
+  background: #50b348;
+  font-weight: 800;
+  padding: 8px 16px;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.document-title {
+  padding: 20px;
+}
+
+.form-body {
+
+}
+
+.form-input {
+  background: white;
+  color: black;
+  font-size: 12px;
+  width: 90%;
+  margin: 10px;
+  padding: 12px;
+  border: 1px solid rgba(10,30,44,.15);
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(10,30,44,.05);
+}

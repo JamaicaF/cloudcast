@@ -4,14 +4,13 @@ class AudioUploadForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.cast;
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
+    this.handleFile = this.handleFile.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleTitleChange(e) {
-    this.setState({
-      title:e.target.value
-    });
+    this.setState({title:e.target.value});
   }
 
   handleFile(e) {
@@ -27,38 +26,46 @@ class AudioUploadForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const formData = newFormData();
+    const formData = new FormData();
     formData.append('cast[title]', this.state.title);
     if (this.state.castFile) {
       formData.append('cast[castAudio]', this.state.castFile);
     }
-    this.props.action(this.state);
+    this.props.uploadAudio(this.state).then(
+      (response) => console.log(response.test_message),
+      (response) => {
+        console.log(response.responseJSON)
+    });
   }
 
   render () {
     return(
-      <div>
-        <h2>
-          Upload
-        </h2>
+      <div className="upload-form">
+        <h2 className="document-title">Upload</h2>
 
-        <form onSubmit={this.handleSubmit}>
+        <form className="form-body" onSubmit={this.handleSubmit}>
+          <input type="file"
+            onChange={this.handleFile}
+          />
 
-          <h3 className="">Please choose an audio file -
-            MP3, AAC, M4A, MP4 audio or OGG types are accepted.</h3>
-          <br />
-          <h3 className="">Mixcloud is for Radio Shows, DJ Mixes & Podcasts.
-            Single tracks, mashups & full albums are not permitted</h3>
+          <div>
+            <h3 className="">Please choose an audio file -
+              MP3, AAC, M4A, MP4 audio or OGG types are accepted.</h3>
+            <br />
+            <h3 className="">Mixcloud is for Radio Shows, DJ Mixes & Podcasts.
+              Single tracks, mashups & full albums are not permitted</h3>
+          </div>
 
           <input type="text"
-            className="login-form-input"
+            className="form-input"
             placeholder="Choose a title for your upload"
             value={this.state.title}
             onChange={this.handleTitleChange}
             />
           <br/>
 
-          <button>Upload</button>
+          <button className="green-button"
+            onClick={this.handleSubmit}>Upload</button>
         </form>
       </div>
     )
@@ -66,9 +73,3 @@ class AudioUploadForm extends React.Component {
 }
 
 export default AudioUploadForm;
-
-//   <input type="file"
-//     className="blue-button"
-//     value={"Choose File"}
-//     onChange={this.handleFile}
-//   />

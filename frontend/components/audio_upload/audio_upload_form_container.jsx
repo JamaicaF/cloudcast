@@ -8,13 +8,14 @@ const mapStateToProps = state => {
       title: "",
       castFile: null,
       castUrl: null
-    }
+    },
+    errors: state.errors.session
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    action: (cast) => {
+    uploadAudio: (cast) => {
       return dispatch(createCast(cast));
     }
   };

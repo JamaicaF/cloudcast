@@ -30,7 +30,7 @@ const removeCast = (id) => {
 const receiveCastErrors = (errors) => {
   return {
     type: RECEIVE_CAST_ERRORS,
-    errors: errors.responseJSON,
+    errors,
   };
 };
 
@@ -55,7 +55,7 @@ export const createCast = (cast) => {
     return CastApiUtil.createCast(cast).then((cast) => {
       return dispatch(receiveCast(cast));
     }, (error) => {
-      return dispatch(receiveCastErrors(error));
+      return dispatch(receiveCastErrors(error.responseJSON));
     });
   };
 };
@@ -65,7 +65,7 @@ export const updateCast = (cast) => {
     return CastApiUtil.updateCast(cast).then((cast) => {
       return dispatch(receiveCast(cast));
     }, (error) => {
-      return dispatch(receiveCastErrors(error));
+      return dispatch(receiveCastErrors(error.responseJSON));
     });
   };
 };

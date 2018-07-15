@@ -36,11 +36,6 @@ class Api::CastsController < ApplicationController
   private
 
   def cast_params
-    params.require(:cast).permit(
-      :title,
-      :description,
-      :cast_audio,
-      :cast_image
-    )
+    params.require(:cast).permit(:title, :description, :cast_audio, :cast_image)
   end
 end

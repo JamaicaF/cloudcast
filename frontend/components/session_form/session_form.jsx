@@ -100,7 +100,7 @@ class SessionForm extends React.Component {
           </ul>
         </section>
 
-        <form onSubmit={this.handleSubmit} className="login-form">
+        <form className="login-form" onSubmit={this.handleSubmit}>
           <div className="modal-body">
             {this.renderErrors()}
 

@@ -13,9 +13,16 @@
 class Cast < ApplicationRecord
   validates :title, :user_id, presence: true
 
+  validate :ensure_cast_audio
+
   belongs_to :user
 
   has_one_attached :cast_audio
   has_one_attached :cast_image
 
+  def ensure_cast_audio
+    unless self.cast_audio.attached?
+      errors[:cast_audio] << "must be attached"
+    end
+  end
 end
