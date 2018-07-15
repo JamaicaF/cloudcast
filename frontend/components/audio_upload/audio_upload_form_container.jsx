@@ -1,4 +1,6 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 import AudioUploadForm from './audio_upload_form';
 import { createCast } from '../../actions/cast_actions';
 
@@ -15,10 +17,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    uploadAudio: (cast) => {
-      return dispatch(createCast(cast));
-    }
+    uploadAudio: (cast) => dispatch(createCast(cast))
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AudioUploadForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AudioUploadForm));

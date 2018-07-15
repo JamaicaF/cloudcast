@@ -29,13 +29,9 @@ class AudioUploadForm extends React.Component {
     const formData = new FormData();
     formData.append('cast[title]', this.state.title);
     if (this.state.castFile) {
-      formData.append('cast[castAudio]', this.state.castFile);
+      formData.append('cast[cast_audio]', this.state.castFile);
     }
-    this.props.uploadAudio(this.state).then(
-      (response) => console.log(response.test_message),
-      (response) => {
-        console.log(response.responseJSON)
-    });
+    this.props.uploadAudio(formData).then());
   }
 
   render () {
