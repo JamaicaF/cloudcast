@@ -1,11 +1,13 @@
 import { connect } from 'react-redux';
 import AudioUploadForm from './audio_upload_form';
-import { fetchCasts } from '../../actions/cast_actions';
+import { createCast } from '../../actions/cast_actions';
 
 const mapStateToProps = state => {
   return {
     cast: {
       title: "",
+      castFile: null,
+      castUrl: null
     }
   };
 };
@@ -13,7 +15,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     action: (cast) => {
-      return dispatch();
+      return dispatch(createCast(cast));
     }
   };
 };

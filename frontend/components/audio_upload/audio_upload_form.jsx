@@ -15,11 +15,23 @@ class AudioUploadForm extends React.Component {
   }
 
   handleFile(e) {
-
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({castFile: file, castUrl: fileReader.result});
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    const formData = newFormData();
+    formData.append('cast[title]', this.state.title);
+    if (this.state.castFile) {
+      formData.append('cast[castAudio]', this.state.castFile);
+    }
     this.props.action(this.state);
   }
 

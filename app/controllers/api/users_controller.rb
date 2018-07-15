@@ -32,7 +32,10 @@ class Api::UsersController < ApplicationController
       :password,
       :bio,
       :country,
-      :city)
+      :city,
+      :profile_image,
+      :cover_image
+    )
   end
 
 end

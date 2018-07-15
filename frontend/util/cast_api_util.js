@@ -12,19 +12,23 @@ export const fetchCast = (id) => {
   });
 };
 
-export const createCast = (cast) => {
+export const createCast = (formData) => {
   return $.ajax({
     method: 'POST',
     url: '/api/casts',
-    data: { cast }
+    processData: false,
+    contentType: false,
+    data: formData
   });
 };
 
-export const updateCast = (cast) => {
+export const updateCast = (id, formData) => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/casts/${cast.id}`,
-    data: { cast }
+    url: `/api/casts/${id}`,
+    processData: false,
+    contentType: false,
+    data: formData
   });
 };
 
