@@ -1,13 +1,25 @@
 import React from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
 
+import DropdownMenu from './dropdown_menu'
+
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
   }
 
-  sessionLinks() {
+  renderNavOptions() {
+    return(
+      <div>
+        <NavLink className="logo" to="/">Cloudcast</NavLink>
+        <NavLink className="nav-link" to="/upload/">UPLOAD</NavLink>
+        <NavLink className="nav-link" to="/discover/">DISCOVER</NavLink>
+      </div>
+    )
+  }
+
+  renderSessionLinks() {
     return(
       <nav className="nav-start-session">
         <span className="span-input"
@@ -21,29 +33,18 @@ class NavBar extends React.Component {
     );
   }
 
-  handleLogout () {
-    this.props.logout().then(() => this.props.history.push('/'))
-  }
-
-  userAvatar() {
+  renderUserAvatar() {
     return(
       <nav className="user-avatar">
         <h2 className="user-name">{this.props.currentUser.username}</h2>
 
-        <button className="blue-button"
-          onClick={this.handleLogout}>Log out</button>
+        <DropdownMenu />
       </nav>
     )
   }
 
-  renderNavOptions() {
-    return(
-      <div>
-        <NavLink className="logo" to="/">Cloudcast</NavLink>
-        <NavLink className="nav-link" to="/upload/">UPLOAD</NavLink>
-        <NavLink className="nav-link" to="/discover/">DISCOVER</NavLink>
-      </div>
-    )
+  handleLogout () {
+    this.props.logout().then(() => this.props.history.push('/'))
   }
 
   render() {
@@ -51,11 +52,14 @@ class NavBar extends React.Component {
       <div className="nav-bar">
         {this.renderNavOptions()}
         {(this.props.currentUser.id) ?
-          (this.userAvatar(this.props.currentUser, this.props.logout)) :
-          (this.sessionLinks())}
+          (this.renderUserAvatar(this.props.currentUser, this.props.logout)) :
+          (this.renderSessionLinks())}
       </div>
     );
   }
 };
 
 export default NavBar;
+
+// <button className="blue-button"
+//   onClick={this.handleLogout}>Log out</button>

@@ -11,8 +11,6 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    this.renderEmail = this.renderEmail.bind(this);
-    this.renderFooter = this.renderFooter.bind(this);
   }
 
   componentDidMount() {
