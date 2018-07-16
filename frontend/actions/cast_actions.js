@@ -80,6 +80,6 @@ export const deleteCast = (id) => {
 
 export const errorClear = () => {
   return dispatch => {
-    return dispatch(receiveErrors([]));
+    return dispatch(receiveCastErrors([]));
   };
 };

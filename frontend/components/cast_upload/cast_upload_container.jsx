@@ -3,9 +3,10 @@ import { withRouter } from 'react-router-dom';
 
 import CastUpload from './cast_upload';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
-
+    cast: state.entities.casts[ownProps.match.params.id] || {},
+    errors: state.errors.session
   };
 };
 

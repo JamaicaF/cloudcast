@@ -12,7 +12,7 @@ class CastCreateForm extends React.Component {
   componentDidMount() {
     this.props.errorClear();
   }
-  
+
   handleTitleChange(e) {
     this.setState({title: e.target.value});
   }
@@ -40,25 +40,23 @@ class CastCreateForm extends React.Component {
 
   render () {
     return(
-      <div className="upload-form">
-        <h2 className="document-title">Upload</h2>
-        <div className="upload-content">
-
-          <div className="upload-three-assets">
-            <div className="upload-asset-cell">
-              <h2 className="upload-asset-title">UNLIMITED UPLOADS</h2>
-            </div>
-
-            <div className="upload-asset-cell">
-              <h2 className="upload-asset-title">ARTISTS RECEIVE ROYALTIES</h2>
-            </div>
-
-            <div className="upload-asset-cell">
-              <h2 className="upload-asset-title">ADD TRACKLISTS</h2>
-            </div>
+      <div className="upload-content">
+        <div className="upload-three-assets">
+          <div className="upload-asset-cell">
+            <h2 className="upload-asset-title">UNLIMITED UPLOADS</h2>
           </div>
 
+          <div className="upload-asset-cell">
+            <h2 className="upload-asset-title">ARTISTS RECEIVE ROYALTIES</h2>
+          </div>
+
+          <div className="upload-asset-cell">
+            <h2 className="upload-asset-title">ADD TRACKLISTS</h2>
+          </div>
+        </div>
+
         <form className="form-body" onSubmit={this.handleSubmit}>
+
           <input type="file"
             className="file-upload-button"
             onChange={this.handleFile}
@@ -83,7 +81,6 @@ class CastCreateForm extends React.Component {
           <button className="green-button"
             onClick={this.handleSubmit}>Upload</button>
         </form>
-        </div>
       </div>
     )
   }

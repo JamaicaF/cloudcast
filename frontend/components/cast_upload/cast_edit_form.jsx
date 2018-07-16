@@ -48,9 +48,7 @@ class CastEditForm extends React.Component {
 
   render() {
     return(
-      <div>
-        <h2 className="document-title">Uploading {this.state.title}</h2>
-
+      <div className="upload-content">
         <h3 className="content-message">This upload is not public -
           click the Publish button to publish it</h3>
 
@@ -71,13 +69,12 @@ class CastEditForm extends React.Component {
             />
           <br/>
 
-            // canceling submit redirects to user show page if audio has uploaded
-            // or to audio upload form if upload is still in progress
-            <Link>Cancel</Link>
-            <button className="green-button"
-              onClick={this.handleSubmit}>Publish</button>
+          // canceling submit redirects to user show page if audio has uploaded
+          // or to audio upload form if upload is still in progress
+          <Link>Cancel</Link>
+          <button className="green-button"
+            onClick={this.handleSubmit}>Publish</button>
         </form>
-
       </div>
     );
   }
