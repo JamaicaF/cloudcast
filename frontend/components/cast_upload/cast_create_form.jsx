@@ -10,7 +10,7 @@ class CastCreateForm extends React.Component {
   }
 
   handleTitleChange(e) {
-    this.setState({title:e.target.value});
+    this.setState({title: e.target.value});
   }
 
   handleFile(e) {
