@@ -38,38 +38,27 @@
 
 .dropdown-menu {
 	position: absolute;
-	top: 30px;
-	right: 0;
-	background-color: #fff;
+	top: 60px;
+	right: 20px;
+	background: #fff;
 	border: 1px solid gray;
-	border-radius: 3px;
+	border-radius: 4px;
 	padding: 10px;
-	width: 225px;
+	min-width: 130px;
 	z-index: 1;
-	color: gray;
+	color: #49596a;
 	text-align: left;
 	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
-	font-weight: initial;
+  font-size: 13px;
+	font-weight: 400;
+  cursor: pointer;
 }
 
 .dropdown-menu {
-	border-bottom: 1px solid gray;
 }
 
-.gear-dropdown .editions li,
-.gear-dropdown .help li {
-	margin: 5px 0;
-	cursor: pointer;
-	border-radius: 3px;
-	font-size: 12px;
-}
-
-.dropdown-menu a {
+.dropdown-menu span {
 	display: block;
-	padding: 5px 5px;
-}
-
-.fa fa-angle-down {
-  font-size: 100px;
-  color: red;
+	padding: 8px 14px;
+  // border-bottom: 1px solid gray;
 }

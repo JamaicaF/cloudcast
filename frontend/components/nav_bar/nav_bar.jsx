@@ -38,7 +38,7 @@ class NavBar extends React.Component {
       <nav className="user-avatar">
         <h2 className="user-name">{this.props.currentUser.username}</h2>
 
-        <DropdownMenu />
+        <DropdownMenu logout={this.props.logout} />
       </nav>
     )
   }
