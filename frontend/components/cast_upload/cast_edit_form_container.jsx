@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
+import { fetchCast, updateCast, errorClear } from '../../actions/cast_actions';
 import CastEditForm from './cast_edit_form';
-import { fetchCast, updateCast } from '../../actions/cast_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchCast: (id) => dispatch(fetchCast(id)),
-    updateCast: (cast) => dispatch(updateCast(cast))
+    updateCast: (cast) => dispatch(updateCast(cast)),
+    errorClear: () => dispatch(errorClear())
   };
 };
 

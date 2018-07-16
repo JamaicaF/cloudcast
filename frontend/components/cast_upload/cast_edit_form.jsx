@@ -12,6 +12,7 @@ class CastEditForm extends React.Component {
   }
 
   componentDidMount() {
+    this.props.errorClear();
     this.props.fetchCast(this.props.match.params.cast.id);
   }
 

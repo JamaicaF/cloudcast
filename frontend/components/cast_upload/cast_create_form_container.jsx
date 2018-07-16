@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
+import { createCast, errorClear } from '../../actions/cast_actions';
 import CastCreateForm from './cast_create_form';
-import { createCast } from '../../actions/cast_actions';
 
 const mapStateToProps = state => {
   return {
@@ -16,7 +16,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createCast: (cast) => dispatch(createCast(cast))
+    createCast: (cast) => dispatch(createCast(cast)),
+    errorClear: () => dispatch(errorClear())
   };
 };
 

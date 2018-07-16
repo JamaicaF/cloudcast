@@ -9,6 +9,10 @@ class CastCreateForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.errorClear();
+  }
+  
   handleTitleChange(e) {
     this.setState({title: e.target.value});
   }
