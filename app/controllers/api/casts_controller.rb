@@ -19,7 +19,6 @@ class Api::CastsController < ApplicationController
   end
 
   def update
-    debugger
     @cast = current_user.casts.find(params[:id])
     if @cast.update(cast_params)
       render :show
