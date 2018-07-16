@@ -14,10 +14,12 @@ class CastIndex extends React.Component {
 
     return (
       <div>
-        <h2>Featured</h2>
-        <ul>
-          {casts}
-        </ul>
+        <h2 className="document-title">Featured</h2>
+        <div className="upload-content">
+          <ul>
+            {casts}
+          </ul>
+        </div>
       </div>
     );
   }

@@ -38,14 +38,30 @@ class AudioUploadForm extends React.Component {
     return(
       <div className="upload-form">
         <h2 className="document-title">Upload</h2>
+        <div className="upload-content">
+
+          <div className="upload-three-assets">
+            <div className="upload-asset-cell">
+              <h2 className="upload-asset-title">UNLIMITED UPLOADS</h2>
+            </div>
+
+            <div className="upload-asset-cell">
+              <h2 className="upload-asset-title">ARTISTS RECEIVE ROYALTIES</h2>
+            </div>
+
+            <div className="upload-asset-cell">
+              <h2 className="upload-asset-title">ADD TRACKLISTS</h2>
+            </div>
+          </div>
 
         <form className="form-body" onSubmit={this.handleSubmit}>
           <input type="file"
+            className="file-upload-button"
             onChange={this.handleFile}
           />
 
           <div>
-            <h3 className="">Please choose an audio file -
+            <h3 className="modal-footer-toggle">Please choose an audio file -
               MP3, AAC, M4A, MP4 audio or OGG types are accepted.</h3>
             <br />
             <h3 className="">Mixcloud is for Radio Shows, DJ Mixes & Podcasts.
@@ -63,6 +79,7 @@ class AudioUploadForm extends React.Component {
           <button className="green-button"
             onClick={this.handleSubmit}>Upload</button>
         </form>
+        </div>
       </div>
     )
   }
