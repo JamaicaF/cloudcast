@@ -5,7 +5,7 @@ import CastEditForm from './cast_edit_form';
 
 const mapStateToProps = (state) => {
   return {
-    cast: state.entities.casts[state.ui.currentCast],
+    cast: state.entities.casts[state.ui.currentCast.id],
   };
 };
 

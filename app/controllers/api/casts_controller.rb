@@ -1,7 +1,7 @@
 class Api::CastsController < ApplicationController
 
   def index
-    @casts = Cast.all
+    @casts = Cast.all.includes(:user)
   end
 
   def show
@@ -19,8 +19,9 @@ class Api::CastsController < ApplicationController
   end
 
   def update
+    debugger
     @cast = current_user.casts.find(params[:id])
-    if @link.update(link_params)
+    if @cast.update(cast_params)
       render :show
     else
       render json: @cast.errors.full_messages, status: 406

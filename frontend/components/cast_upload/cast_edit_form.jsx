@@ -47,7 +47,7 @@ class CastEditForm extends React.Component {
     if (this.state.castFile) {
       formData.append('cast[cast_image]', this.state.castFile);
     }
-    this.props.updateCast(formData);
+    this.props.updateCast(this.state.id, formData);
   }
 
   render() {
@@ -56,33 +56,33 @@ class CastEditForm extends React.Component {
         <h3 className="content-message">This upload is not public -
           click the Publish button to publish it</h3>
 
-        <form className="cast-edit" onSubmit={this.handleSubmit}>
+        <form className="cast-edit-content" onSubmit={this.handleSubmit}>
           <div className="cast-image-large"></div>
 
-          <div className="">
-            <input type="text"
-              className="form-input-field"
-              value={this.state.title}
-              onChange={this.handleTitleChange}
-              />
-            <br/>
+            <div className="form-body">
+              <input type="text"
+                className="form-input-field"
+                value={this.state.title}
+                onChange={this.handleTitleChange}
+                />
+              <br/>
 
-            <input type="text"
-              className="form-input-field"
-              placeholder="Description"
-              value={this.state.description}
-              onChange={this.handleDescriptionChange}
-              />
-            <br/>
+              <input type="text"
+                className="form-input-field"
+                placeholder="Description"
+                value={this.state.description}
+                onChange={this.handleDescriptionChange}
+                />
+              <br/>
 
-            <div className="form-actions">
-              <span>Cancel</span>
-              <br />
+              <div className="upload-form-actions">
+                <span className="cancel-submit">Cancel</span>
+                <br />
 
-              <button className="green-button"
-                onClick={this.handleSubmit}>Publish</button>
-            </div>
-        </div>
+                <button className="green-button"
+                  onClick={this.handleSubmit}>Publish</button>
+              </div>
+          </div>
         </form>
       </div>
     );

@@ -5,7 +5,7 @@ import CastUpload from './cast_upload';
 
 const mapStateToProps = (state) => {
   return {
-    cast: state.entities.casts[state.ui.currentCast] || {},
+    cast: state.entities.casts[state.ui.currentCast.id] || {},
     errors: state.errors.session
   };
 };

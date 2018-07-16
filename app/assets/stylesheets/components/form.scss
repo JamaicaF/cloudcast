@@ -50,17 +50,14 @@ button {
   border: 1px solid #e2584e;
 }
 
-.cast-edit {
+.cast-edit-content {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.form-actions {
-  display: inline-block;
-  float: right;
+.upload-form-actions {
   width: 180px;
   margin: 20px 80px;
-  flex-direction: row;
-  justify-content: space-around;
+  align-self: baseline;
 }

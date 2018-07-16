@@ -26,7 +26,7 @@ class CastUpload extends React.Component {
       <div className="upload-form">
         <div className="document-title">
           {this.state.part === 2
-            ? <h2>Uploading {this.props.title}</h2>
+            ? <h2>Uploading {this.props.cast.title}</h2>
             : <h2>Upload</h2>
           }
         </div>
