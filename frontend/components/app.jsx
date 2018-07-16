@@ -11,8 +11,7 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 
 import CastIndexContainer from './casts/cast_index_container';
-
-import AudioUploadFormContainer from './audio_upload/audio_upload_form_container';
+import CastUploadContainer from './cast_upload/cast_upload_container';
 
 const App = ({ loggedIn }) => (
   <div>
@@ -30,7 +29,7 @@ const App = ({ loggedIn }) => (
           )
         ))} />
       <Route path="/discover/" component={CastIndexContainer} />
-      <Route path="/upload/" component={AudioUploadFormContainer} />
+      <Route path="/upload/" component={CastUploadContainer} />
     </Switch>
   </div>
 );

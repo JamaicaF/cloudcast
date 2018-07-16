@@ -1,6 +1,6 @@
 import React from 'react';
 
-class AudioUploadForm extends React.Component {
+class CastCreateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.cast;
@@ -31,7 +31,7 @@ class AudioUploadForm extends React.Component {
     if (this.state.castFile) {
       formData.append('cast[cast_audio]', this.state.castFile);
     }
-    this.props.uploadAudio(formData);
+    this.props.createCast(formData);
   }
 
   render () {
@@ -85,4 +85,4 @@ class AudioUploadForm extends React.Component {
   }
 }
 
-export default AudioUploadForm;
+export default CastCreateForm;

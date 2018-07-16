@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class AudioSubmissionForm extends React.Component {
+class CastEditForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.cast;
+    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
+    this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -39,3 +41,5 @@ class AudioSubmissionForm extends React.Component {
     );
   }
 }
+
+export default CastEditForm;

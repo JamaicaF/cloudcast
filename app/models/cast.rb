@@ -18,7 +18,7 @@ class Cast < ApplicationRecord
   belongs_to :user
 
   has_one_attached :cast_audio
-  # has_one_attached :cast_image
+  has_one_attached :cast_image
 
   def ensure_cast_audio
     unless self.cast_audio.attached?
