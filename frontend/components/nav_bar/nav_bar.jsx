@@ -60,6 +60,3 @@ class NavBar extends React.Component {
 };
 
 export default NavBar;
-
-// <button className="blue-button"
-//   onClick={this.handleLogout}>Log out</button>
