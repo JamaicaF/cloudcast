@@ -10,6 +10,10 @@ class CastEditForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchCast(this.props.match.params.cast.id);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.action(this.state);
@@ -19,7 +23,7 @@ class CastEditForm extends React.Component {
     return(
       <div>
         <h2>
-          Uploading {this.state.cast}
+          Uploading {this.state.title}
         </h2>
         <form onSubmit={this.handleSubmit}>
           <input type="text"
