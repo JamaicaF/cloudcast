@@ -2,9 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CastIndexItem = props => (
-  <div>
-    <li>
-      <Link to={`/casts/${props.cast.id}`}>{props.cast.title}</Link>
+  <div className="cast-item">
+    <div className="cast-image">
+    </div>
+
+    <li className="cast-text-info">
+      <Link className="cast-title"
+        to={`/casts/${props.cast.id}`}>{props.cast.title}</Link>
+      <br />
+
+      <span className="item-el">by</span>
+      &nbsp;
+      <span className="cast-author">Username</span>
       <button></button>
     </li>
   </div>
