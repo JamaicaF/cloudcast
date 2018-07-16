@@ -7,9 +7,15 @@
   border-bottom: 1px solid #ebf0f2;
 }
 
-.cast-image {
+.cast-image-small {
   height: 160px;
   width: 160px;
+  background: #beccd5;
+}
+
+.cast-image-large {
+  height: 300px;
+  width: 300px;
   background: #beccd5;
 }
 

@@ -4,7 +4,12 @@ import { Link } from 'react-router-dom';
 class CastEditForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.cast;
+    const cast = Object.assign({}, this.props.cast, {
+          description: "",
+          castImgFile: null,
+          castImgUrl: null
+        });
+    this.state = cast;
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
     this.handleFile = this.handleFile.bind(this);
@@ -13,7 +18,6 @@ class CastEditForm extends React.Component {
 
   componentDidMount() {
     this.props.errorClear();
-    this.props.fetchCast(this.props.match.params.cast.id);
   }
 
   handleTitleChange(e) {
@@ -52,28 +56,33 @@ class CastEditForm extends React.Component {
         <h3 className="content-message">This upload is not public -
           click the Publish button to publish it</h3>
 
-        <form onSubmit={this.handleSubmit}>
-          <div className="cast-image"></div>
+        <form className="cast-edit" onSubmit={this.handleSubmit}>
+          <div className="cast-image-large"></div>
 
-          <input type="text"
-            className="form-input"
-            value={this.state.title}
-            onChange={this.handleTitleChange}
-            />
-          <br/>
+          <div className="">
+            <input type="text"
+              className="form-input-field"
+              value={this.state.title}
+              onChange={this.handleTitleChange}
+              />
+            <br/>
 
-          <input type="text"
-            placeholder="Description"
-            value={this.state.description}
-            onChange={this.handleDescriptionChange}
-            />
-          <br/>
+            <input type="text"
+              className="form-input-field"
+              placeholder="Description"
+              value={this.state.description}
+              onChange={this.handleDescriptionChange}
+              />
+            <br/>
 
-          // canceling submit redirects to user show page if audio has uploaded
-          // or to audio upload form if upload is still in progress
-          <Link>Cancel</Link>
-          <button className="green-button"
-            onClick={this.handleSubmit}>Publish</button>
+            <div className="form-actions">
+              <span>Cancel</span>
+              <br />
+
+              <button className="green-button"
+                onClick={this.handleSubmit}>Publish</button>
+            </div>
+        </div>
         </form>
       </div>
     );

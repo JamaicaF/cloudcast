@@ -6,7 +6,7 @@ import CastEditFormContainer from './cast_edit_form_container';
 class CastUpload extends React.Component {
   constructor(props){
     super(props);
-    this.state = this.props.cast;
+    this.state = {part: 1};
   }
 
   renderErrors() {
@@ -25,17 +25,17 @@ class CastUpload extends React.Component {
     return(
       <div className="upload-form">
         <div className="document-title">
-          {this.state.title !== undefined
-            ? <h2>Uploading {this.state.title}</h2>
+          {this.state.part === 2
+            ? <h2>Uploading {this.props.title}</h2>
             : <h2>Upload</h2>
           }
         </div>
 
         {this.renderErrors()}
 
-        {this.state.title !== undefined
+        {this.state.part === 2
           ? <CastEditFormContainer />
-          : <CastCreateFormContainer />
+        : <CastCreateFormContainer goToPartTwo={() => this.setState({ part: 2 })} />
         }
       </div>
     );

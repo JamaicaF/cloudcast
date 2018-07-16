@@ -3,7 +3,11 @@ import React from 'react';
 class CastCreateForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.cast;
+    this.state = {
+      title: "",
+      castFile: null,
+      castUrl: null
+    };
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,7 +39,7 @@ class CastCreateForm extends React.Component {
     if (this.state.castFile) {
       formData.append('cast[cast_audio]', this.state.castFile);
     }
-    this.props.createCast(formData);
+    this.props.createCast(formData).then(this.props.goToPartTwo);
   }
 
   render () {
@@ -71,7 +75,7 @@ class CastCreateForm extends React.Component {
           </div>
 
           <input type="text"
-            className="form-input"
+            className="form-input-field"
             placeholder="Choose a title for your upload"
             value={this.state.title}
             onChange={this.handleTitleChange}

@@ -1,18 +1,16 @@
 import { connect } from 'react-redux';
 
-import { fetchCast, updateCast, errorClear } from '../../actions/cast_actions';
+import { updateCast, errorClear } from '../../actions/cast_actions';
 import CastEditForm from './cast_edit_form';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
-    cast: state.entities.casts[ownProps.match.params.cast.id],
-    errors: state.errors.session
+    cast: state.entities.casts[state.ui.currentCast],
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCast: (id) => dispatch(fetchCast(id)),
     updateCast: (cast) => dispatch(updateCast(cast)),
     errorClear: () => dispatch(errorClear())
   };

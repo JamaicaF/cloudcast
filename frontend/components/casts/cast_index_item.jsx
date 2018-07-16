@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const CastIndexItem = props => (
   <div className="cast-item">
-    <div className="cast-image">
+    <div className="cast-image-small">
     </div>
 
     <li className="cast-text-info">

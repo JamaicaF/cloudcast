@@ -3,17 +3,15 @@ import { withRouter } from 'react-router-dom';
 
 import CastUpload from './cast_upload';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
-    cast: state.entities.casts[ownProps.match.params.id] || {},
+    cast: state.entities.casts[state.ui.currentCast] || {},
     errors: state.errors.session
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-
-  };
+  return {};
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CastUpload));
