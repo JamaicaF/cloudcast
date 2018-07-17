@@ -12,10 +12,9 @@ class CastUpload extends React.Component {
   }
 
   renderErrors() {
-    debugger
     if (this.props.errors.length) {
       return (
-        <ul className="renderErrors">
+        <ul className="render-upload-errors">
           {this.props.errors.map((error,idx) => (
             <li key={`error: ${idx}`}>{error}</li>
           ))}

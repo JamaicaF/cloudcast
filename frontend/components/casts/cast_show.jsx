@@ -17,7 +17,7 @@ class CastShow extends React.Component {
 
         <li className="cast-text-info">
           <Link className="cast-title"
-            to={`/casts/${this.props.cast.id}/`}>{this.props.cast.title}</Link>
+            to={`/casts/${this.props.castId}/`}>{this.props.cast.title}</Link>
           <br />
 
           <span className="item-el">by</span>
