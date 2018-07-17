@@ -59,7 +59,7 @@ class CastEditForm extends React.Component {
         <form className="cast-edit-content" onSubmit={this.handleSubmit}>
           <div className="cast-image-large"></div>
 
-            <div className="form-body">
+            <div className="edit-form-body">
               <input type="text"
                 className="form-input-field"
                 value={this.state.title}
