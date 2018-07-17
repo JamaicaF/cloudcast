@@ -60,11 +60,12 @@ class CastCreateForm extends React.Component {
         </div>
 
         <form className="form-body" onSubmit={this.handleSubmit}>
-
-          <input type="file"
-            className="file-upload-button"
-            onChange={this.handleFile}
-          />
+          <label className="style-file-upload">
+            <input type="file"
+              className="file-upload-button"
+              onChange={this.handleFile}
+              />
+          </label>
 
           <div>
             <h3 className="modal-footer-toggle">Please choose an audio file -
