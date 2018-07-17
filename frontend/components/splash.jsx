@@ -3,11 +3,23 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { openModal } from '../actions/modal_actions';
+import { login } from '../actions/session_actions';
 
 class Splash extends React.Component {
 
   handleClick() {
     this.props.history.push('/discover/');
+  }
+
+  demoLogin() {
+    const user = {
+      username: 'guest',
+      password: '123456'
+    };
+
+    this.props.demoLogin(user).then(() => {
+      this.props.history.push('/upload/');
+    });
   }
 
   render() {
@@ -22,7 +34,11 @@ class Splash extends React.Component {
           <br />
 
           <button className="blue-button"
-            onClick={this.handleClick.bind(this)}>Start Listening</button>
+            onClick={this.demoLogin.bind(this)}>Demo Login</button>
+          <br />
+
+          <button className="blue-button"
+            onClick={this.demoLogin.bind(this)}>Start Listening</button>
           <br />
 
           <span className="splash-tagline span-input"
@@ -57,7 +73,8 @@ class Splash extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal) => dispatch(openModal(modal)),
+    demoLogin: (user) => dispatch(login(user)),
   };
 };
 
