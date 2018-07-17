@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const CastIndexItem = props => (
@@ -13,10 +14,19 @@ const CastIndexItem = props => (
 
       <span className="item-el">by</span>
       &nbsp;
-      <span className="cast-author">Username</span>
+      <span className="cast-author">{props.user.username}</span>
       <button></button>
     </li>
   </div>
 );
 
-export default CastIndexItem;
+const mapStateToProps = (state, ownProps) => {
+  const userId = ownProps.cast.userId;
+  const user = state.entities.users[userId];
+
+  return {
+    user
+  }
+}
+
+export default connect(mapStateToProps)(CastIndexItem);
