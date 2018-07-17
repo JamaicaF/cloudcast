@@ -44,10 +44,12 @@ class CastEditForm extends React.Component {
     const formData = new FormData();
     formData.append('cast[title]', this.state.title);
     formData.append('cast[description]', this.state.description);
-    if (this.state.castFile) {
-      formData.append('cast[cast_image]', this.state.castFile);
+    if (this.state.castImgFile) {
+      formData.append('cast[cast_image]', this.state.castImgFile);
     }
-    this.props.updateCast(this.state.id, formData);
+    this.props.updateCast(this.state.id, formData).then(() => {
+      this.props.history.push(`/casts/${this.state.id}`);
+    });
   }
 
   render() {

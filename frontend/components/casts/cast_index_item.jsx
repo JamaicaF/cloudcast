@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const CastIndexItem = props => (
   <div className="cast-item">
     <div className="cast-image-small">
-      {props.castImg
-        ? <img src={props.castImg} />
+      {props.cast.castImage
+        ? <img src={props.cast.castImage} />
         : null
       }
     </div>
