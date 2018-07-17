@@ -33,13 +33,15 @@ class Splash extends React.Component {
             the best DJs and radio presenters in the world</h3>
           <br />
 
-          <button className="blue-button"
-            onClick={this.demoLogin.bind(this)}>Demo Login</button>
-          <br />
+          <div className="splash-buttons">
+            <button className="navy-button"
+              onClick={this.demoLogin.bind(this)}>Demo Login</button>
+            <br />
 
-          <button className="blue-button"
-            onClick={this.demoLogin.bind(this)}>Start Listening</button>
-          <br />
+            <button className="blue-button"
+              onClick={this.demoLogin.bind(this)}>Start Listening</button>
+            <br />
+          </div>
 
           <span className="splash-tagline span-input"
             onClick={() => this.props.openModal('signup')}>
