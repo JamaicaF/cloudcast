@@ -12,13 +12,13 @@ const CastIndexItem = props => (
     </div>
 
     <li className="cast-text-info">
-      <Link className="cast-title"
+      <Link className="cast-index-title"
         to={`/casts/${props.cast.id}/`}>{props.cast.title}</Link>
       <br />
 
       <span className="item-el">by</span>
       &nbsp;
-      <span className="cast-author">{props.user.username}</span>
+      <span className="cast-author">username</span>
     </li>
   </div>
 );

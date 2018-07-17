@@ -1,0 +1,22 @@
+.show-page-header {
+  display: flex;
+  justify-content: space-around;
+  background: rgb(19, 20, 25);
+}
+
+.cast-show-title {
+  font-size: 32px;
+  font-weight: 300;
+  color: white;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 4px rgba(52,73,94,.2);
+}
+
+.cast-author {
+  font-size: 14px;
+}
+
+.show-page-body {
+  display: flex;
+  margin-left: 100px;
+}

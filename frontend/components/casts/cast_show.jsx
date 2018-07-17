@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class CastShow extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
       loading: true
@@ -10,41 +10,52 @@ class CastShow extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchCast(this.props.match.params.castId).then(
-      success => this.setState({loading:false})
-    );
+    this.props.fetchCast(this.props.match.params.castId).then(() => {
+      this.setState({loading: false});
+    });
   }
 
   render () {
-    if (this.state.loading) return <div></div>;
-
-    let image;
-    if (this.props.cast.castImage) {
-      image = <img src={this.props.cast.castImage} />;
-    } else {
-      image = null;
+    if (this.state.loading) {
+      return <div />;
     }
 
     return (
-      <div>
-        <div className="cast-image-large">
+      <div className="show-content">
+        <div className="show-page-header">
 
-          {this.image()}
+          <li className="cast-text-info">
+            <Link className="cast-show-title"
+              to={`/casts/${this.props.cast.id}/`}>{this.props.cast.title}</Link>
+            <br />
 
+            <div className="cast-author">
+              <span className="item-el">by</span>
+              &nbsp;
+              <span >Username</span>
+            </div>
+          </li>
+
+          <div className="cast-image-large">
+            <img src={this.props.cast.castImage} />
+          </div>
         </div>
 
-        <li className="cast-text-info">
-          <Link className="cast-title"
-            to={`/casts/${this.props.cast.id}/`}>{this.props.cast.title}</Link>
-          <br />
-
-          <span className="item-el">by</span>
-          &nbsp;
-          <span className="cast-author">Username</span>
-        </li>
+        <div className="show-page-body">
+          <h3>
+            {this.props.cast.description}
+          </h3>
+        </div>
       </div>
     );
   }
 }
 
 export default CastShow;
+
+// let image;
+// if (this.props.cast.castImage) {
+//   image = ;
+// } else {
+//   image = null;
+// }
