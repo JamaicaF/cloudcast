@@ -82,8 +82,14 @@ class CastCreateForm extends React.Component {
             />
           <br/>
 
-          <button className="green-button"
-            onClick={this.handleSubmit}>Upload</button>
+          {this.props.loggedIn ? (
+            <button className="green-button"
+              onClick={this.handleSubmit}>Upload</button>
+          ): (
+            <button className="green-button"
+              onClick={() => this.props.openModal('signup')}>
+              Join free to upload</button>
+          )}
         </form>
       </div>
     )
