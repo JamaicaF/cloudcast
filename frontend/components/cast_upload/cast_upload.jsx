@@ -6,10 +6,13 @@ import CastEditFormContainer from './cast_edit_form_container';
 class CastUpload extends React.Component {
   constructor(props){
     super(props);
-    this.state = {part: 1};
+    this.state = {
+      part: 1
+    };
   }
 
   renderErrors() {
+    debugger
     if (this.props.errors.length) {
       return (
         <ul className="renderErrors">
