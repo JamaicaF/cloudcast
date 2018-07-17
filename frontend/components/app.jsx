@@ -31,7 +31,7 @@ const App = ({ loggedIn }) => (
         ))} />
       <Route path="/upload/" component={CastUploadContainer} />
       <Route path="/discover/" component={CastIndexContainer} />
-
+      <Route path="/casts/:castId" component={CastShowContainer} />
     </Switch>
   </div>
 );

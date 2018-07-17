@@ -1,12 +1,11 @@
 import { connect } from 'react-redux';
 
-import convertToKebabCase from '../../util/kebab_util';
 import CastShow from './cast_show';
 import { fetchCast } from '../../actions/cast_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    cast: state.entities.casts[state.ui.currentCast.id]
+    cast: state.entities.casts[ownProps.match.params.castId]
   };
 };
 
