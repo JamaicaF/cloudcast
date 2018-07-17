@@ -62,8 +62,8 @@ export const createCast = (cast) => {
 
 export const updateCast = (id, cast) => {
   return dispatch => {
-    return CastApiUtil.updateCast(id, cast).then((id, cast) => {
-      return dispatch(receiveCast(id, cast));
+    return CastApiUtil.updateCast(id, cast).then((cast) => {
+      return dispatch(receiveCast(cast));
     }, (error) => {
       return dispatch(receiveCastErrors(error.responseJSON));
     });

@@ -51,6 +51,10 @@ class CastEditForm extends React.Component {
   }
 
   render() {
+    const preview = this.state.castImgUrl
+      ? <img src={this.state.castImgUrl} />
+      : null;
+
     return(
       <div className="upload-content">
         <h3 className="content-message">This upload is not public -
@@ -58,6 +62,7 @@ class CastEditForm extends React.Component {
 
         <form className="cast-edit-content" onSubmit={this.handleSubmit}>
           <div className="cast-image-large">
+            {preview}
             <input type="file"
               className="file-upload-button"
               onChange={this.handleFile}

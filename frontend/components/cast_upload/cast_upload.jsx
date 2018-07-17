@@ -35,7 +35,7 @@ class CastUpload extends React.Component {
 
         {this.state.part === 2
           ? <CastEditFormContainer />
-        : <CastCreateFormContainer goToPartTwo={() => this.setState({ part: 2 })} />
+          : <CastCreateFormContainer goToPartTwo={() => this.setState({ part: 2 })} />
         }
       </div>
     );

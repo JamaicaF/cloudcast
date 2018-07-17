@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateCast: (cast) => dispatch(updateCast(cast)),
+    updateCast: (id, cast) => dispatch(updateCast(id, cast)),
     errorClear: () => dispatch(errorClear())
   };
 };
