@@ -57,7 +57,12 @@ class CastEditForm extends React.Component {
           click the Publish button to publish it</h3>
 
         <form className="cast-edit-content" onSubmit={this.handleSubmit}>
-          <div className="cast-image-large"></div>
+          <div className="cast-image-large">
+            <input type="file"
+              className="file-upload-button"
+              onChange={this.handleFile}
+            />
+          </div>
 
             <div className="edit-form-body">
               <input type="text"
