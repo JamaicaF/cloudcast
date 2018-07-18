@@ -35,7 +35,7 @@ class CastEditForm extends React.Component {
     if (this.state.loading) {
       return <div />;
     }
-
+    debugger
     return (
       <div className="upload-form">
         <div className="document-title">
@@ -44,7 +44,7 @@ class CastEditForm extends React.Component {
 
         {this.renderErrors()}
 
-        <CastSubmitForm props={this.props} />
+        <CastSubmitForm cast={this.props.cast} />
       </div>
     );
   }

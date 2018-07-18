@@ -4,11 +4,16 @@ import { Link } from 'react-router-dom';
 class CastSubmitForm extends React.Component {
   constructor(props) {
     super(props);
-    const cast = Object.assign({}, this.props.cast, {
-          description: "",
-          castImgFile: null,
-          castImgUrl: null
-        });
+    debugger
+    const cast = Object.assign(
+      {},
+      {
+        description: "",
+        castImgFile: null,
+        castImgUrl: null,
+      },
+      this.props.cast
+    );
     this.state = cast;
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
@@ -59,7 +64,7 @@ class CastSubmitForm extends React.Component {
     const preview = this.state.castImgUrl
       ? <img src={this.state.castImgUrl} />
       : null;
-
+      debugger
     return(
       <div className="upload-content">
 
