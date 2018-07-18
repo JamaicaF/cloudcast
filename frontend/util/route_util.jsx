@@ -22,11 +22,30 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
   )} />
 );
 
+const Shielded = ({ component: Component, path, userCasts, exact, location }) => {
+  let matchCastToUser = userCasts.some((cast) => {
+    return (cast == location.pathname.split("/")[2])
+  })
+
+  return (
+    <Route path={path} exact={exact} render={(props) => (
+      (matchCastToUser) ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to="/" />
+      )
+    )} />
+  )
+};
+
 const mapStateToProps = state => {
   return {
-    loggedIn: Boolean(state.session.id)
+    loggedIn: Boolean(state.session.id),
+    userCasts: state.entities.users[state.session.id].castIds
   };
 };
+
+export const ShieldedRoute = withRouter(connect(mapStateToProps)(Shielded));
 
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 

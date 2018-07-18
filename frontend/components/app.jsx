@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { AuthRoute, ProtectedRoute } from '../util/route_util.jsx';
+import { AuthRoute, ProtectedRoute, ShieldedRoute } from '../util/route_util.jsx';
 
 import SplashContainer from './splash';
 import NavBarContainer from './nav_bar/nav_bar_container';
@@ -32,8 +32,8 @@ const App = ({ loggedIn }) => (
         ))} />
       <Route path="/upload/" component={CastUploadContainer} />
       <Route path="/discover/" component={CastIndexContainer} />
-      <Route path="/casts/:castId/" component={CastShowContainer} />
-      <ProtectedRoute path="/casts/:castId/edit/" component={CastEditFormContainer} />
+      <Route exact path="/casts/:castId/" component={CastShowContainer} />
+      <ShieldedRoute path="/casts/:castId/edit/" component={CastEditFormContainer} />
     </Switch>
   </div>
 );
