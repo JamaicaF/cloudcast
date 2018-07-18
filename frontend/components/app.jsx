@@ -13,6 +13,7 @@ import LogInFormContainer from './session_form/login_form_container';
 import CastUploadContainer from './cast_upload/cast_upload_container';
 import CastIndexContainer from './casts/cast_index_container';
 import CastShowContainer from './casts/cast_show_container';
+import CastEditFormContainer from './cast_upload/cast_edit_form_container';
 
 const App = ({ loggedIn }) => (
   <div>
@@ -31,7 +32,8 @@ const App = ({ loggedIn }) => (
         ))} />
       <Route path="/upload/" component={CastUploadContainer} />
       <Route path="/discover/" component={CastIndexContainer} />
-      <Route path="/casts/:castId" component={CastShowContainer} />
+      <Route path="/casts/:castId/" component={CastShowContainer} />
+      <ProtectedRoute path="/casts/:castId/edit/" component={CastEditFormContainer} />
     </Switch>
   </div>
 );

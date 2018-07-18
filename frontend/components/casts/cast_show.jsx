@@ -19,7 +19,7 @@ class CastShow extends React.Component {
 
   handleEdit(e) {
     e.preventDefault();
-    this.props.history.push(`/${this.props.cast.id}/edit/`);
+    this.props.history.push(`/casts/${this.props.cast.id}/edit/`);
   }
 
   handleDelete(e) {
