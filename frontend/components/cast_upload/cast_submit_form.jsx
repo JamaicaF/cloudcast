@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class CastSubmitForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     const cast = Object.assign(
       {},
       {
@@ -64,7 +63,7 @@ class CastSubmitForm extends React.Component {
     const preview = this.state.castImgUrl
       ? <img src={this.state.castImgUrl} />
       : null;
-      debugger
+      
     return(
       <div className="upload-content">
 

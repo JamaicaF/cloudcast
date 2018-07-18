@@ -35,7 +35,6 @@ class CastEditForm extends React.Component {
     if (this.state.loading) {
       return <div />;
     }
-    debugger
     return (
       <div className="upload-form">
         <div className="document-title">
