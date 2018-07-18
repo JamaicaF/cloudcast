@@ -28,7 +28,7 @@ class Api::CastsController < ApplicationController
   end
 
   def destroy
-    @cast = cast.find(params[:id])
+    @cast = Cast.find(params[:id])
     @cast.destroy
     render json: {}
   end
