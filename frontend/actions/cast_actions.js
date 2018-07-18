@@ -73,7 +73,7 @@ export const updateCast = (id, cast) => {
 export const deleteCast = (id) => {
   return dispatch => {
     return CastApiUtil.deleteCast(id).then(() => {
-      return dispatch(removeCast());
+      return dispatch(removeCast(id));
     });
   };
 };

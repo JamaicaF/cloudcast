@@ -6,7 +6,7 @@ import CastShow from './cast_show';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    cast: state.entities.casts[ownProps.match.params.castId],
+    cast: state.entities.casts[ownProps.match.params.castId] || {},
     currentUser: state.session.id
   };
 };
