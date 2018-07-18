@@ -66,8 +66,6 @@ class CastEditForm extends React.Component {
 
     return(
       <div className="upload-content">
-        <h3 className="content-message">This upload is not public -
-          click the Publish button to publish it</h3>
 
         <form className="cast-edit-content" onSubmit={this.handleSubmit}>
           <div className="cast-image-large">
@@ -111,5 +109,7 @@ class CastEditForm extends React.Component {
     );
   }
 }
-
 export default CastEditForm;
+
+// <h3 className="content-message">This upload is not public -
+//   click the Publish button to publish it</h3>
