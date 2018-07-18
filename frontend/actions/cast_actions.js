@@ -8,8 +8,8 @@ export const RECEIVE_CAST_ERRORS = "RECEIVE_CAST_ERRORS";
 const receiveAllCasts = ({ casts, users }) => {
   return {
     type: RECEIVE_ALL_CASTS,
-    casts: casts,
-    users: users
+    casts,
+    users
   };
 };
 
@@ -36,8 +36,8 @@ const receiveCastErrors = (errors) => {
 
 export const fetchCasts = () => {
   return dispatch => {
-    return CastApiUtil.fetchCasts().then((casts) => {
-      return dispatch(receiveAllCasts(casts));
+    return CastApiUtil.fetchCasts().then((payload) => {
+      return dispatch(receiveAllCasts(payload));
     });
   };
 };

@@ -32,7 +32,7 @@ class CastShow extends React.Component {
             <div className="cast-author">
               <span className="item-el">by</span>
               &nbsp;
-              <span >Username</span>
+              <span >{this.props.cast.castCreator}</span>
             </div>
           </li>
 
