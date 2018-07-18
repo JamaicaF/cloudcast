@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import { fetchCast, updateCast, deleteCast, errorClear } from '../../actions/cast_actions';
-import CastSubmitForm from './cast_submit_form';
+import CastSubmitForm from './cast_submit_form_container';
 
 class CastEditForm extends React.Component {
   constructor(props) {
