@@ -18,20 +18,21 @@
 
 .show-page-body {
   display: flex;
+  flex-direction: column;
   margin-left: 100px;
+  align-items: flex-start;
 }
 
 .cast-creator-actions {
   display: flex;
-  justify-content: space-around;
   position: relative;
   color: #697f95;
-  background: #f5f9fc;
   font-size: 18px;
   margin: 40px;
 }
 
 .cast-action-title {
+  background: #f5f9fc;
   padding: 20px 40px;
   border: 1px solid #8196a7;
   border-radius: 4px;

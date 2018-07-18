@@ -7,12 +7,25 @@ class CastShow extends React.Component {
     this.state = {
       loading: true
     };
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchCast(this.props.match.params.castId).then(() => {
       this.setState({loading: false});
     });
+  }
+
+  handleEdit(e) {
+    e.preventDefault();
+    this.props.history.push(`/${this.props.cast.id}/edit/`);
+  }
+
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteCast(this.props.cast.id).then(() =>
+      this.props.history.push('/'));
   }
 
   render () {
@@ -44,13 +57,11 @@ class CastShow extends React.Component {
         <div className="show-page-body">
           <div className="cast-creator-actions">
             <span className="cast-action-title"
-              onClick={() => this.props.history.push(`/${this.props.cast.id}/edit/`)}>
-              Edit</span>
+              onClick={this.handleEdit}>Edit</span>
             <br />
 
             <span className="cast-action-title"
-              onClick={() => this.props.deleteCast(this.props.cast.id)}>
-              Delete</span>
+              onClick={this.handleDelete}>Delete</span>
           </div>
 
           <h3>
