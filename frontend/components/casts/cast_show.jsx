@@ -33,6 +33,7 @@ class CastShow extends React.Component {
       return <div />;
     }
 
+
     return (
       <div className="show-content">
         <div className="show-page-header">
@@ -55,14 +56,18 @@ class CastShow extends React.Component {
         </div>
 
         <div className="show-page-body">
-          <div className="cast-creator-actions">
-            <span className="cast-action-title"
-              onClick={this.handleEdit}>Edit</span>
-            <br />
 
-            <span className="cast-action-title"
-              onClick={this.handleDelete}>Delete</span>
-          </div>
+          {(this.props.cast.userId === this.props.currentUser
+          ) ? (
+            <div className="cast-creator-actions">
+              <span className="cast-action-title"
+                onClick={this.handleEdit}>Edit</span>
+              <br />
+
+              <span className="cast-action-title"
+                onClick={this.handleDelete}>Delete</span>
+            </div>
+          ) : null}
 
           <h3>
             {this.props.cast.description}
