@@ -20,3 +20,19 @@
   display: flex;
   margin-left: 100px;
 }
+
+.cast-creator-actions {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  color: #697f95;
+  background: #f5f9fc;
+  font-size: 18px;
+  margin: 40px;
+}
+
+.cast-action-title {
+  padding: 20px 40px;
+  border: 1px solid #8196a7;
+  border-radius: 4px;
+}

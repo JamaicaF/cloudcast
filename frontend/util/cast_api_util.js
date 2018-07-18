@@ -35,6 +35,6 @@ export const updateCast = (id, formData) => {
 export const deleteCast = (id) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/posts/${id}`
+    url: `/api/casts/${id}`
   });
 };

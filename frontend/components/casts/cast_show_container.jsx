@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
+import { fetchCast, deleteCast } from '../../actions/cast_actions';
 import CastShow from './cast_show';
-import { fetchCast } from '../../actions/cast_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -11,8 +12,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCast: (id) => dispatch(fetchCast(id))
+    fetchCast: (id) => dispatch(fetchCast(id)),
+    deleteCast: (id) => dispatch(deleteCast(id)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CastShow);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CastShow));

@@ -42,6 +42,17 @@ class CastShow extends React.Component {
         </div>
 
         <div className="show-page-body">
+          <div className="cast-creator-actions">
+            <span className="cast-action-title"
+              onClick={() => this.props.history.push(`/${this.props.cast.id}/edit/`)}>
+              Edit</span>
+            <br />
+
+            <span className="cast-action-title"
+              onClick={() => this.props.deleteCast(this.props.cast.id)}>
+              Delete</span>
+          </div>
+
           <h3>
             {this.props.cast.description}
           </h3>
