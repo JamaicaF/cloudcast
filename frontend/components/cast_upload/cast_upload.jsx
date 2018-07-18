@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CastCreateFormContainer from './cast_create_form_container';
-import CastEditFormContainer from './cast_edit_form_container';
+import CastSubmitFormContainer from './cast_submit_form_container';
 
 class CastUpload extends React.Component {
   constructor(props){
@@ -9,6 +9,10 @@ class CastUpload extends React.Component {
     this.state = {
       part: 1
     };
+  }
+
+  componentDidMount() {
+    this.props.errorClear();
   }
 
   renderErrors() {
@@ -36,7 +40,7 @@ class CastUpload extends React.Component {
         {this.renderErrors()}
 
         {this.state.part === 2
-          ? <CastEditFormContainer />
+          ? <CastSubmitFormContainer />
           : <CastCreateFormContainer goToPartTwo={() => this.setState({ part: 2 })} />
         }
       </div>

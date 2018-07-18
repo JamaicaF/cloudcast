@@ -1,17 +1,65 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { updateCast, errorClear, deleteCast } from '../../actions/cast_actions';
-import CastEditForm from './cast_edit_form';
+import { fetchCast, updateCast, deleteCast, errorClear } from '../../actions/cast_actions';
+import CastSubmitForm from './cast_submit_form';
 
-const mapStateToProps = (state) => {
+class CastEditForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true
+    };
+  }
+
+  componentDidMount() {
+    this.props.fetchCast(this.props.match.params.castId).then(() => {
+      this.setState({loading: false});
+    });
+  }
+
+  renderErrors() {
+    if (this.props.errors.length) {
+      return (
+        <ul className="render-upload-errors">
+          {this.props.errors.map((error,idx) => (
+            <li key={`error: ${idx}`}>{error}</li>
+          ))}
+        </ul>
+      )
+    }
+  }
+
+  render () {
+    if (this.state.loading) {
+      return <div />;
+    }
+
+    return (
+      <div className="upload-form">
+        <div className="document-title">
+          {<h2>Editing {this.props.cast.title}</h2>}
+        </div>
+
+        {this.renderErrors()}
+
+        <CastSubmitForm props={this.props} />
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state, ownProps) => {
   return {
-    cast: state.entities.casts[state.ui.currentCast.id],
+    cast: state.entities.casts[ownProps.match.params.castId],
+    errors: state.errors.cast
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
+    fetchCast: (id) => dispatch(fetchCast(id)),
     updateCast: (id, cast) => dispatch(updateCast(id, cast)),
     deleteCast: (id) => dispatch(deleteCast(id)),
     errorClear: () => dispatch(errorClear())

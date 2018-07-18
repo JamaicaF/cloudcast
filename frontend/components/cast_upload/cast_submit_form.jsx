@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class CastEditForm extends React.Component {
+class CastSubmitForm extends React.Component {
   constructor(props) {
     super(props);
     const cast = Object.assign({}, this.props.cast, {
@@ -15,10 +15,6 @@ class CastEditForm extends React.Component {
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
-  }
-
-  componentDidMount() {
-    this.props.errorClear();
   }
 
   handleTitleChange(e) {
@@ -109,7 +105,7 @@ class CastEditForm extends React.Component {
     );
   }
 }
-export default CastEditForm;
+export default CastSubmitForm;
 
 // <h3 className="content-message">This upload is not public -
 //   click the Publish button to publish it</h3>
