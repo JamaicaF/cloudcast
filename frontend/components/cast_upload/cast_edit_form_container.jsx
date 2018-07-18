@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { updateCast, errorClear } from '../../actions/cast_actions';
+import { updateCast, errorClear, deleteCast } from '../../actions/cast_actions';
 import CastEditForm from './cast_edit_form';
 
 const mapStateToProps = (state) => {
@@ -13,6 +13,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     updateCast: (id, cast) => dispatch(updateCast(id, cast)),
+    deleteCast: (id) => dispatch(deleteCast(id)),
     errorClear: () => dispatch(errorClear())
   };
 };

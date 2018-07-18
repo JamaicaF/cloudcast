@@ -14,6 +14,7 @@ class CastEditForm extends React.Component {
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -52,6 +53,12 @@ class CastEditForm extends React.Component {
     });
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteCast(this.props.cast.id).then(() =>
+      this.props.history.push('/'));
+  }
+
   render() {
     const preview = this.state.castImgUrl
       ? <img src={this.state.castImgUrl} />
@@ -88,6 +95,10 @@ class CastEditForm extends React.Component {
               <br/>
 
               <div className="upload-form-actions">
+                <span className="cancel-submit"
+                  onClick={this.handleDelete}>Delete this upload</span>
+                <br />
+
                 <span className="cancel-submit">Cancel</span>
                 <br />
 
