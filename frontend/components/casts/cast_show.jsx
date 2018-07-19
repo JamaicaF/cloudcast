@@ -7,7 +7,6 @@ class CastShow extends React.Component {
     super(props);
     this.state = {
       loading: true,
-      playback: false,
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);

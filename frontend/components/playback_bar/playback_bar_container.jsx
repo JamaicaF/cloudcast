@@ -4,12 +4,13 @@ import PlaybackBar from './playback_bar';
 
 const mapStateToProps = state => {
   if (state.ui.currentPlayback.id) {
-    return {
-      castToPlay: state.entities.casts[state.ui.currentPlayback.id]
-    };
-  } else {
-    return {};
+    return { castToPlay: state.entities.casts[state.ui.currentPlayback.id]};
   }
+  return {
+    displayPlaybackBar: state.ui.currentPlayback.displayPlaybackBar,
+    playback: state.ui.currentPlayback.playback,
+    playbackId: state.ui.currentPlayback.playbackId,
+  };
 };
 
 const mapDispatchToProps = dispatch => {
