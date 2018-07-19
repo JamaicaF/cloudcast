@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PlaybackBarContainer from '../playback_bar/playback_bar_container';
 
 class CastShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true
+      loading: true,
+      playing: false
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
@@ -28,11 +30,18 @@ class CastShow extends React.Component {
       this.props.history.push('/'));
   }
 
-  render () {
-    if (this.state.loading) {
-      return <div />;
-    }
+  handlePlay() {
+    this.setState({ })
+  }
 
+  togglePlay() {
+    this.setState((prevState) => ({
+      playing: !prevState.playing
+    }));
+  }
+
+  render () {
+    if (this.state.loading) return <div />;
 
     return (
       <div className="show-content">
