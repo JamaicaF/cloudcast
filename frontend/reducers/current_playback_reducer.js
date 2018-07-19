@@ -13,7 +13,7 @@ export default (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_PLAYBACK_CAST:
       newState.playbackId = action.playbackId;
-      newstate.displayPlaybackBar = true;
+      newState.displayPlaybackBar = true;
       return newState;
     case TOGGLE_PLAY_PAUSE:
       newState.playback = !newState.playback;

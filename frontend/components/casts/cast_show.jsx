@@ -9,6 +9,7 @@ class CastShow extends React.Component {
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
+    this.togglePlayPause = this.togglePlayPause.bind(this);
   }
 
   componentDidMount(){
@@ -28,6 +29,12 @@ class CastShow extends React.Component {
       this.props.history.push('/'));
   }
 
+  togglePlayPause() {
+    debugger
+    this.props.togglePlayPause();
+    this.props.receivePlaybackCast(this.props.cast.id);
+  }
+
   render () {
     if (this.state.loading) return <div />;
 
@@ -35,9 +42,9 @@ class CastShow extends React.Component {
       <div className="show-content">
         <div className="show-page-header">
           <div className="cast-show-el">
-            <div className="show-play-button" onClick={() => this.togglePlayPause()}>
+            <div className="show-play-button" onClick={this.togglePlayPause}>
 
-              {this.state.ui.currentPlayback.playback
+              {this.props.currentPlayback.playback
                 ? <i className="far fa-pause-circle"></i>
                 : <i className="far fa-play-circle"></i>
               }

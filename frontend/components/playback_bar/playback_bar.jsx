@@ -6,32 +6,19 @@ class PlaybackBar extends React.Component {
 
     this.handlePlay = this.handlePlay.bind(this);
     this.handlePause = this.handlePause.bind(this);
-
   }
 
-  // componentDidMount(){
-  //   this.props.fetchCast(this.props.castToPlay).then(() => {
-  //     this.setState({loading: false});
-  //   });
-  // }
+  
 
   handlePlay() {
-    this.audio.play()
+    this.audio.play();
   }
 
   handlePause() {
-    this.audio.pause()
-  }
-
-  togglePlaybackBar() {
-    debugger
-    if (displayPlaybackBar === false && playback) {
-      return this.setState(() => ({ displayPlaybackBar: true }));
-    }
+    this.audio.pause();
   }
 
   render() {
-    // if (this.state.loading) return <div />;
 
     return (
       <div className="playback-bar">
