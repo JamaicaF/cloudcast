@@ -9,7 +9,12 @@ class CastIndex extends React.Component {
 
   render() {
     const casts = this.props.casts.map((cast) => {
-      return <CastIndexItem key={`cast-${cast.id}`} cast={cast} />;
+      return <CastIndexItem key={`cast-${cast.id}`}
+        cast={cast}
+        currentPlayback={this.props.currentPlayback}
+        receivePlaybackCast={this.props.receivePlaybackCast}
+        togglePlayPause={this.props.togglePlayPause}
+        />;
     });
 
     return (

@@ -5,15 +5,12 @@ import { Link } from 'react-router-dom';
 class CastIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      playback: false
-    };
+    this.togglePlayPause = this.togglePlayPause.bind(this);
   }
 
-  togglePlay() {
-    this.setState((prevState) => ({
-      playback: !prevState.playback
-    }));
+  togglePlayPause() {
+    this.props.togglePlayPause();
+    this.props.receivePlaybackCast(this.props.cast.id);
   }
 
   render () {
@@ -26,12 +23,12 @@ class CastIndexItem extends React.Component {
           }
         </div>
 
-        <div className="index-play-button" onClick={() => this.togglePlay()}>
-          {this.state.playback
+        <div className="index-play-button" onClick={this.togglePlayPause}>
+          {this.props.currentPlayback.playback &&
+            this.props.currentPlayback.playbackId === this.props.cast.id 
             ? <i className="far fa-pause-circle"></i>
             : <i className="far fa-play-circle"></i>
           }
-
         </div>
 
         <li className="cast-index-text-info">

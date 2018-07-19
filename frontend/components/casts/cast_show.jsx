@@ -30,7 +30,6 @@ class CastShow extends React.Component {
   }
 
   togglePlayPause() {
-    debugger
     this.props.togglePlayPause();
     this.props.receivePlaybackCast(this.props.cast.id);
   }
@@ -44,7 +43,8 @@ class CastShow extends React.Component {
           <div className="cast-show-el">
             <div className="show-play-button" onClick={this.togglePlayPause}>
 
-              {this.props.currentPlayback.playback
+              {this.props.currentPlayback.playback &&
+                this.props.currentPlayback.playbackId === this.props.cast.id
                 ? <i className="far fa-pause-circle"></i>
                 : <i className="far fa-play-circle"></i>
               }

@@ -4,7 +4,7 @@ import PlaybackBar from './playback_bar';
 import { receivePlaybackCast, togglePlayPause } from '../../actions/current_playback_actions';
 
 const mapStateToProps = state => {
-  let castToPlay = null;
+  let castToPlay = {};
   const playbackId = state.ui.currentPlayback.playbackId;
   if (playbackId > 0) {
     castToPlay = state.entities.casts[playbackId];
