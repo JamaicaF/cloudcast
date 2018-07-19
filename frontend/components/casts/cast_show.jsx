@@ -7,7 +7,7 @@ class CastShow extends React.Component {
     super(props);
     this.state = {
       loading: true,
-      playing: false
+      playback: false
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
@@ -31,12 +31,12 @@ class CastShow extends React.Component {
   }
 
   handlePlay() {
-    this.setState({ })
+    this.setState()
   }
 
   togglePlay() {
     this.setState((prevState) => ({
-      playing: !prevState.playing
+      playback: !prevState.playback
     }));
   }
 
@@ -46,18 +46,26 @@ class CastShow extends React.Component {
     return (
       <div className="show-content">
         <div className="show-page-header">
-
-          <li className="cast-text-info">
-            <Link className="cast-show-title"
-              to={`/casts/${this.props.cast.id}/`}>{this.props.cast.title}</Link>
-            <br />
-
-            <div className="cast-author">
-              <span className="item-el">by</span>
-              &nbsp;
-              <span >{this.props.cast.castCreator}</span>
+          <div className="cast-show-el">
+            <div className="show-play-button" onClick={() => this.togglePlay()}>
+              {this.state.playback
+                ? <i className="far fa-pause-circle"></i>
+                : <i className="far fa-play-circle"></i>
+              }
             </div>
-          </li>
+
+            <li className="cast-show-text-info">
+              <Link className="cast-show-title"
+                to={`/casts/${this.props.cast.id}/`}>{this.props.cast.title}</Link>
+              <br />
+
+              <div className="cast-show-creator">
+                <span className="item-el">by</span>
+                &nbsp;
+                <span>{this.props.cast.castCreator}</span>
+              </div>
+            </li>
+          </div>
 
           <div className="cast-image-large">
             <img src={this.props.cast.castImage} />

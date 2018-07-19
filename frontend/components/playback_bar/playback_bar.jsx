@@ -38,7 +38,7 @@ class PlaybackBar extends React.Component {
     return (
       <div className="playback-bar">
         <audio controls
-          src={}
+          src=""
           ref={this.audio}>
           Your browser does not support this audio element.
         </audio>
