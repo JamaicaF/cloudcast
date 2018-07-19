@@ -20,7 +20,6 @@ class DropdownMenu extends React.Component {
   }
 
   render() {
-
     return (
       <div className="dropdown">
         <div className="dropdown-btn" onClick={() => this.toggleDropdown()}>

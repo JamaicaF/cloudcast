@@ -5,7 +5,6 @@ class PlaybackBar extends React.Component {
     super(props);
     this.state = {
       displayPlaybackBar: false,
-      loading: true
     };
     this.handlePlay = this.handlePlay.bind(this);
     this.handlePause = this.handlePause.bind(this);
@@ -27,9 +26,10 @@ class PlaybackBar extends React.Component {
   }
 
   togglePlaybackBar() {
-    this.setState((prevState) => ({
-      displayPlaybackBar: !prevState.displayPlaybackBar
-    }));
+    debugger
+    if (displayPlaybackBar === false && playback) {
+      return this.setState(() => ({ displayPlaybackBar: true }));
+    }
   }
 
   render() {
@@ -37,11 +37,14 @@ class PlaybackBar extends React.Component {
 
     return (
       <div className="playback-bar">
-        <audio controls
-          src=""
-          ref={this.audio}>
-          Your browser does not support this audio element.
-        </audio>
+        {this.state.displayPlaybackBar
+          ? <audio controls
+              src={this.props.castToPlay.castAudio}
+              ref={this.audio}>
+              Your browser does not support this audio element.
+            </audio>
+          : null
+        }
       </div>
     );
   }

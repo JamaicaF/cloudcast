@@ -3,9 +3,13 @@ import { connect } from 'react-redux';
 import PlaybackBar from './playback_bar';
 
 const mapStateToProps = state => {
-  return {
-    castToPlay: state.entities.casts[state.ui.currentPlayback.id]
-  };
+  if (state.ui.currentPlayback.id) {
+    return {
+      castToPlay: state.entities.casts[state.ui.currentPlayback.id]
+    };
+  } else {
+    return {};
+  }
 };
 
 const mapDispatchToProps = dispatch => {

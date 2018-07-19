@@ -1,9 +1,13 @@
-import { RECEIVE_CAST } from '../actions/cast_actions';
+import { RECEIVE_PLAYBACK_CAST } from '../actions/current_playback_actions';
 
-export default (state = { id: 0 }, action) => {
+const defaultState = {
+  playback: false,
+}
+
+export default (state = defaultState, action) => {
   switch (action.type) {
-    case RECEIVE_CAST:
-      return {id: action.cast.id};
+    case RECEIVE_PLAYBACK_CAST:
+      return {playbackId: action.id};
     default:
       return state;
   }
