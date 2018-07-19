@@ -35,6 +35,14 @@ class PlaybackBar extends React.Component {
 
     return (
       <div className="playback-bar">
+        {this.props.displayPlaybackBar
+          ? <audio controls
+              src={this.props.castToPlay.castAudio}
+              ref={this.audio}>
+              Your browser does not support this audio element.
+            </audio>
+          : null
+        }
       </div>
     );
   }
@@ -42,13 +50,3 @@ class PlaybackBar extends React.Component {
 
 
 export default PlaybackBar;
-
-
-// {this.state.displayPlaybackBar
-//   ? <audio controls
-//       src={this.props.castToPlay.castAudio}
-//       ref={this.audio}>
-//       Your browser does not support this audio element.
-//     </audio>
-//   : null
-// }

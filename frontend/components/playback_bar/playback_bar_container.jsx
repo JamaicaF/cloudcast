@@ -1,21 +1,27 @@
 import { connect } from 'react-redux';
 
 import PlaybackBar from './playback_bar';
+import { receivePlaybackCast, togglePlayPause } from '../../actions/current_playback_actions';
 
 const mapStateToProps = state => {
-  if (state.ui.currentPlayback.id) {
-    return { castToPlay: state.entities.casts[state.ui.currentPlayback.id]};
+  let castToPlay = null;
+  const playbackId = state.ui.currentPlayback.playbackId;
+  if (playbackId > 0) {
+    castToPlay = state.entities.casts[playbackId];
   }
+
   return {
     displayPlaybackBar: state.ui.currentPlayback.displayPlaybackBar,
     playback: state.ui.currentPlayback.playback,
     playbackId: state.ui.currentPlayback.playbackId,
+    castToPlay,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCast: (id) => dispatch(fetchCast(id))
+    receivePlaybackCast: (id) => dispatch(receivePlaybackCast(id)),
+    togglePlayPause: () => dispatch(togglePlayPause())
   };
 };
 

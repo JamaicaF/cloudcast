@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PlaybackBarContainer from '../playback_bar/playback_bar_container';
 
 class CastShow extends React.Component {
   constructor(props) {
@@ -10,7 +9,6 @@ class CastShow extends React.Component {
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
-    this.togglePlay = this.togglePlay.bind(this);
   }
 
   componentDidMount(){
@@ -30,10 +28,6 @@ class CastShow extends React.Component {
       this.props.history.push('/'));
   }
 
-  togglePlay() {
-    this.setState(() => ({ playback: !this.state.playback }));
-  }
-
   render () {
     if (this.state.loading) return <div />;
 
@@ -41,9 +35,9 @@ class CastShow extends React.Component {
       <div className="show-content">
         <div className="show-page-header">
           <div className="cast-show-el">
-            <div className="show-play-button" onClick={() => this.togglePlay()}>
+            <div className="show-play-button" onClick={() => this.togglePlayPause()}>
 
-              {this.state.playback
+              {this.state.ui.currentPlayback.playback
                 ? <i className="far fa-pause-circle"></i>
                 : <i className="far fa-play-circle"></i>
               }

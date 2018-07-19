@@ -8,7 +8,7 @@ export const receivePlaybackCast = (id) => {
   };
 };
 
-export const toggleplaypause = () => {
+export const togglePlayPause = () => {
   return {
     type: TOGGLE_PLAY_PAUSE,
   };
