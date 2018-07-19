@@ -5,7 +5,7 @@ import { AuthRoute, ProtectedRoute, ShieldedRoute } from '../util/route_util.jsx
 
 import SplashContainer from './splash';
 import NavBarContainer from './nav_bar/nav_bar_container';
-import Footer from './playback_bar/footer';
+import PlaybackBarContainer from './playback_bar/playback_bar_container';
 
 import Modal from './session_form/modal';
 import SignUpFormContainer from './session_form/signup_form_container';
@@ -37,7 +37,7 @@ const App = ({ loggedIn }) => (
       <ShieldedRoute path="/casts/:castId/edit/" component={CastEditFormContainer} />
     </Switch>
 
-    <Footer />
+    <PlaybackBarContainer />
   </div>
 );
 

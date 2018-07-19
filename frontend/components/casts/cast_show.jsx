@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PlaybackBarContainer from '../playback_bar/playback_bar_container';
-import Footer from '../playback_bar/footer';
 
 class CastShow extends React.Component {
   constructor(props) {
@@ -86,10 +85,6 @@ class CastShow extends React.Component {
           <h3>
             {this.props.cast.description}
           </h3>
-
-          <div>
-            <Footer playback={this.state.playback} />
-          </div>
         </div>
       </div>
     );
@@ -97,10 +92,3 @@ class CastShow extends React.Component {
 }
 
 export default CastShow;
-
-// let image;
-// if (this.props.cast.castImage) {
-//   image = ;
-// } else {
-//   image = null;
-// }
