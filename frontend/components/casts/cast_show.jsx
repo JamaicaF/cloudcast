@@ -30,8 +30,8 @@ class CastShow extends React.Component {
   }
 
   togglePlayPause() {
-    this.props.togglePlayPause();
     this.props.receivePlaybackCast(this.props.cast.id);
+    this.props.togglePlayPause();
   }
 
   render () {

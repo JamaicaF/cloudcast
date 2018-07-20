@@ -39,5 +39,8 @@
 }
 
 .progress-bar-container {
-  margin: 0 20px;
+  margin: 20px 20px;
+  border-radius: 5px;
+  // width: 100%;
+  box-sizing: content-box;
 }

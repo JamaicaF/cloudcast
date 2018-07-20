@@ -9,8 +9,8 @@ class CastIndexItem extends React.Component {
   }
 
   togglePlayPause() {
-    this.props.togglePlayPause();
     this.props.receivePlaybackCast(this.props.cast.id);
+    this.props.togglePlayPause();
   }
 
   render () {
@@ -25,7 +25,7 @@ class CastIndexItem extends React.Component {
 
         <div className="index-play-button" onClick={this.togglePlayPause}>
           {this.props.currentPlayback.playback &&
-            this.props.currentPlayback.playbackId === this.props.cast.id 
+            this.props.currentPlayback.playbackId === this.props.cast.id
             ? <i className="far fa-pause-circle"></i>
             : <i className="far fa-play-circle"></i>
           }
