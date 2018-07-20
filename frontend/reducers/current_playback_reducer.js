@@ -1,10 +1,11 @@
-import { RECEIVE_PLAYBACK_CAST, TOGGLE_PLAY_PAUSE } from '../actions/current_playback_actions';
+import { RECEIVE_PLAYBACK_CAST, TOGGLE_PLAY_PAUSE, TOGGLE_MUTE_UNMUTE } from '../actions/current_playback_actions';
 import { merge } from 'lodash';
 
 const defaultState = {
   displayPlaybackBar: false,
   playback: false,
-  playbackId: 0
+  playbackId: 0,
+  muteAudio: false
 };
 
 export default (state = defaultState, action) => {
@@ -17,6 +18,9 @@ export default (state = defaultState, action) => {
       return newState;
     case TOGGLE_PLAY_PAUSE:
       newState.playback = !newState.playback;
+      return newState;
+    case TOGGLE_MUTE_UNMUTE:
+      newState.muteAudio = !newState.muteAudio;
       return newState;
     default:
       return state;

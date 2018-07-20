@@ -21,7 +21,7 @@
   color: white;
   font-size: 24px;
   cursor: pointer;
-  margin: 6px 24px;
+  margin: 12px 24px;
 
 }
 
@@ -33,9 +33,9 @@
 
 .playback-volume-icon {
   color: white;
-  font-size: 20 px;
+  font-size: 22px;
   cursor: pointer;
-  margin: 10px;
+  margin: 13px;
 }
 
 .progress-bar-container {
@@ -43,4 +43,8 @@
   border-radius: 5px;
   // width: 100%;
   box-sizing: content-box;
+}
+
+.audio-tag {
+  display: none;
 }

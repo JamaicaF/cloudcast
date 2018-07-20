@@ -6,13 +6,8 @@ class PlaybackBar extends React.Component {
     super(props);
     this.audioTag = React.createRef();
     this.togglePlayPause = this.togglePlayPause.bind(this);
+    this.toggleMuteUnmute = this.toggleMuteUnmute.bind(this);
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   if (!this.props.playback && nextProps.playback) {
-  //     this.setState({ hidden: 'block' });
-  //   }
-  // }
 
   componentDidUpdate(oldProps) {
     if (this.props.playback && !oldProps.playback) {
@@ -26,6 +21,10 @@ class PlaybackBar extends React.Component {
 
   togglePlayPause() {
     this.props.togglePlayPause();
+  }
+
+  toggleMuteUnmute() {
+    this.props.toggleMuteUnmute();
   }
 
   bar() {
@@ -59,14 +58,18 @@ class PlaybackBar extends React.Component {
             <input type="range" min="1" max="100" value="1" className="slider" id="myRange" />
           </div>
 
-          <div className="playback-volume-icon">
-            <i className="fas fa-volume-up"></i>
+          <div className="playback-volume-icon" onClick={this.toggleMuteUnmute}>
+            {this.props.mute
+              ? <i class="fas fa-volume-off"></i>
+              : <i className="fas fa-volume-up"></i>
+            }
           </div>
 
-          <div>
+          <div className="audio-tag">
             <audio
               controls
               preload="auto"
+              muted={this.props.mute}
               src={this.props.castToPlay.castAudio}
               ref={this.audioTag}>
                 Your browser does not support this audio element.
