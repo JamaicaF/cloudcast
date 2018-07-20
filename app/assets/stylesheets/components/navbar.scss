@@ -22,7 +22,17 @@
   color: #cdd9e4;
 }
 
-.nav-start-session, .user-avatar {
+.nav-start-session {
+  color: white;
+  display: inline-block;
+  float: right;
+  width: 180px;
+  margin: 10px 80px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.user-avatar {
   color: white;
   display: inline-block;
   float: right;
@@ -33,7 +43,12 @@
 }
 
 .nav-el {
+  margin-top: 12px;
   color: #cdd9e4;
+}
+
+.login-text{
+  margin-top: 12px;
 }
 
 .dropdown-menu {

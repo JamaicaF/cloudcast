@@ -39,7 +39,7 @@ class Splash extends React.Component {
             <br />
 
             <button className="blue-button"
-              onClick={this.demoLogin.bind(this)}>Start Listening</button>
+              onClick={this.handleClick.bind(this)}>Start Listening</button>
             <br />
           </div>
 

@@ -22,7 +22,8 @@ class NavBar extends React.Component {
   renderSessionLinks() {
     return(
       <nav className="nav-start-session">
-        <span className="span-input"
+
+        <span className="span-input login-text"
           onClick={() => this.props.openModal('login')}>Log in</span>
 
         <span className="nav-el">or</span>
