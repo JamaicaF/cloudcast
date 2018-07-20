@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { AuthRoute, ProtectedRoute, ShieldedRoute } from '../util/route_util.jsx';
+import { AuthRoute, ProtectedRoute, ShieldedRoute } from '../util/route_util';
 
 import SplashContainer from './splash';
 import NavBarContainer from './nav_bar/nav_bar_container';
@@ -36,7 +36,7 @@ const App = ({ loggedIn }) => (
       <Route exact path="/casts/:castId/" component={CastShowContainer} />
       <ShieldedRoute path="/casts/:castId/edit/" component={CastEditFormContainer} />
     </Switch>
-    
+
     <div className="player-height-placeholder">
       <PlaybackBarContainer />
     </div>

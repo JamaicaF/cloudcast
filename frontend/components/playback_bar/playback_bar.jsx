@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import renderAudioLength from '../../util/util_util';
+
 class PlaybackBar extends React.Component {
   constructor(props) {
     super(props);
     this.audioTag = React.createRef();
     this.togglePlayPause = this.togglePlayPause.bind(this);
     this.toggleMuteUnmute = this.toggleMuteUnmute.bind(this);
+    // this.renderAudioLength = this.renderAudioLength.bind(this);
   }
 
   componentDidUpdate(oldProps) {
@@ -26,6 +29,10 @@ class PlaybackBar extends React.Component {
   toggleMuteUnmute() {
     this.props.toggleMuteUnmute();
   }
+
+  // renderAudioLength() {
+  //   renderAudioLength(this.audioTag.current.duration)
+  // }
 
   bar() {
     if (this.props.displayPlaybackBar) {
@@ -55,7 +62,14 @@ class PlaybackBar extends React.Component {
           </div>
 
           <div className="progress-bar-container">
-            <input type="range" min="1" max="100" value="1" className="slider" id="myRange" />
+            <input type="range" min="1" max="100" className="slider" id="myRange" />
+          </div>
+
+          <div className="">
+            {this.props.castToPlay.id !== 0
+              ? null
+              : null
+            }
           </div>
 
           <div className="playback-volume-icon" onClick={this.toggleMuteUnmute}>
