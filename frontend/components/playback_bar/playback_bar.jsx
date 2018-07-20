@@ -55,6 +55,7 @@ class PlaybackBar extends React.Component {
           <div className="progress-bar-container">
             <audio
               controls
+              preload="auto"
               src={this.props.castToPlay.castAudio}
               ref={this.audioTag}>
                 Your browser does not support this audio element.
@@ -72,7 +73,7 @@ class PlaybackBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="player-height-placeholder">
         {this.bar()}
       </div>
     );

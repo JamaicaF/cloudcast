@@ -1,6 +1,15 @@
+.player-height-placeholder {
+  height: 100px;
+  background: transparent;
+}
+
 .playback-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   display: flex;
   background: rgba(39,58,75,.97);
+  z-index: 1;
 }
 
 .cast-img-playback {

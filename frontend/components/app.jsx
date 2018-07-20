@@ -36,8 +36,10 @@ const App = ({ loggedIn }) => (
       <Route exact path="/casts/:castId/" component={CastShowContainer} />
       <ShieldedRoute path="/casts/:castId/edit/" component={CastEditFormContainer} />
     </Switch>
-
-    <PlaybackBarContainer />
+    
+    <div className="player-height-placeholder">
+      <PlaybackBarContainer />
+    </div>
   </div>
 );
 
