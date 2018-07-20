@@ -63,7 +63,7 @@ class CastSubmitForm extends React.Component {
     const preview = this.state.castImgUrl
       ? <img src={this.state.castImgUrl} />
       : null;
-      
+
     return(
       <div className="upload-content">
 
@@ -97,9 +97,6 @@ class CastSubmitForm extends React.Component {
                   onClick={this.handleDelete}>Delete this upload</span>
                 <br />
 
-                <span className="cancel-submit">Cancel</span>
-                <br />
-
                 <button className="green-button"
                   onClick={this.handleSubmit}>Publish</button>
               </div>
@@ -113,3 +110,6 @@ export default CastSubmitForm;
 
 // <h3 className="content-message">This upload is not public -
 //   click the Publish button to publish it</h3>
+
+// <span className="cancel-submit">Cancel</span>
+// <br />

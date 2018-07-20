@@ -1,0 +1,41 @@
+.playback-bar {
+  display: flex;
+  background: rgba(39,58,75,.97);
+}
+
+.cast-img-playback {
+  width: 52px;
+  height: 52px;
+}
+
+.playback-play-icon {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 6px 24px;
+
+}
+
+.playback-cast-text-info {
+  color: white;
+  font-size: 14px;
+  margin: 6px 10px 0 0; 
+}
+
+// .playback-cast-show-title {
+//   font-weight: 400;
+// }
+//
+// .playback-cast-show-creator {
+//   font-weight: 300;
+// }
+.playback-volume-icon {
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.progress-bar-container {
+  margin: 0 20px;
+}

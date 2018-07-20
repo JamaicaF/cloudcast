@@ -42,7 +42,6 @@ class CastShow extends React.Component {
         <div className="show-page-header">
           <div className="cast-show-el">
             <div className="show-play-button" onClick={this.togglePlayPause}>
-
               {this.props.currentPlayback.playback &&
                 this.props.currentPlayback.playbackId === this.props.cast.id
                 ? <i className="far fa-pause-circle"></i>
