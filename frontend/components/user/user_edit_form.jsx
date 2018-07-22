@@ -2,12 +2,43 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class UserEditForm extends React.Component {
-
   constructor(props){
     super(props);
-    this.state = this.props.user;
+    const user = Object.assign(
+      {},
+      {
+        bio: "",
+        country: "",
+        city: "",
+        userImgFile: null,
+        userImgUrl: null,
+        userCoverImgFile: null,
+        userCoverImgUrl: null,
+      },
+      this.props.user
+    );
+    this.state = user;
+    this.handleChange = this.handleChange.bind(this);
+    this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
+  componentDidMount() {
+    this.props.fetchUser(this.props.match.params.userId);
+  }
+
+  handleChange(field) {
+    return e => this.setState({
+      [field]: e.target.value
+    });
+  }
+
+  handleFile(e) {
+    constfile = e.currentTarget.files[0];
+    constfileReader = new fileReader();
+    fileReader.onloadend = () => {
+      this.setState
+    }
   }
 
   handleSubmit(e) {
@@ -20,8 +51,8 @@ class UserEditForm extends React.Component {
       <div>
         <h2>Your profile settings</h2>
         <Link>Visit your profile</Link>
-        <form onSubmit={this.handleSubmit}>
 
+        <form onSubmit={this.handleSubmit}>
           <label><strong>Display name</strong>
             Spaces and special characters are fine.
             <input type="text"

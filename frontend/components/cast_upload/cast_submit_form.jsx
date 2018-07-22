@@ -14,19 +14,16 @@ class CastSubmitForm extends React.Component {
       this.props.cast
     );
     this.state = cast;
-    this.handleTitleChange = this.handleTitleChange.bind(this);
-    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  handleTitleChange(e) {
-    this.setState({title: e.target.value});
-  }
-
-  handleDescriptionChange(e) {
-    this.setState({description: e.target.value});
+  handleChange(field) {
+    return e => this.setState({
+      [field]: e.target.value
+    });
   }
 
   handleFile(e) {
@@ -80,15 +77,15 @@ class CastSubmitForm extends React.Component {
               <input type="text"
                 className="form-input-field"
                 value={this.state.title}
-                onChange={this.handleTitleChange}
+                onChange={this.handleChange('title')}
                 />
               <br/>
 
               <input type="text"
                 className="form-input-field"
                 placeholder="Description"
-                value={this.state.description}
-                onChange={this.handleDescriptionChange}
+                value={this.state.description || ""}
+                onChange={this.handleChange('description')}
                 />
               <br/>
 

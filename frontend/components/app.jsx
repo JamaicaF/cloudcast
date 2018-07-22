@@ -37,7 +37,7 @@ const App = ({ loggedIn }) => (
       <Route path="/upload/" component={CastUploadContainer} />
       <Route path="/discover/" component={CastIndexContainer} />
       <Route exact path="/casts/:castId/" component={CastShowContainer} />
-      <Route exact path="/users/:userId" component={UserShowContainer} />
+      <Route exact path="/users/:userId/" component={UserShowContainer} />
       <Route exact path="/settings/profile/" component={UserEditFormContainer} />
       <ShieldedRoute path="/casts/:castId/edit/" component={CastEditFormContainer} />
     </Switch>
