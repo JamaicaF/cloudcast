@@ -35,3 +35,5 @@ class UserShow extends React.Component {
   }
 
 }
+
+export default UserShow;

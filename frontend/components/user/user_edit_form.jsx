@@ -59,4 +59,4 @@ class UserEditForm extends React.Component {
   }
 }
 
-export default UserProfileForm;
+export default UserEditForm;

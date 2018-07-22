@@ -16,6 +16,9 @@ import CastIndexContainer from './casts/cast_index_container';
 import CastShowContainer from './casts/cast_show_container';
 import CastEditFormContainer from './cast_upload/cast_edit_form_container';
 
+import UserShowContainer from './user/user_show_container';
+import UserEditFormContainer from './user/user_edit_form_container';
+
 const App = ({ loggedIn }) => (
   <div>
     <Modal />
@@ -34,6 +37,8 @@ const App = ({ loggedIn }) => (
       <Route path="/upload/" component={CastUploadContainer} />
       <Route path="/discover/" component={CastIndexContainer} />
       <Route exact path="/casts/:castId/" component={CastShowContainer} />
+      <Route exact path="/users/:userId" component={UserShowContainer} />
+      <Route exact path="/settings/profile/" component={UserEditFormContainer} />
       <ShieldedRoute path="/casts/:castId/edit/" component={CastEditFormContainer} />
     </Switch>
 

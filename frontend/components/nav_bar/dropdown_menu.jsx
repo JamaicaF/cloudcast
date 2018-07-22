@@ -31,6 +31,9 @@ class DropdownMenu extends React.Component {
 
           {this.state.menuOpen
             ? <div className="dropdown-menu">
+              <li><span onClick={() => this.props.displayUserProfile()}>Your profile</span></li>
+              <li><span onClick={() => this.props.updateUserSettings()}>Settings</span></li>
+              <li><span onClick={() => this.props.switchAccount()}>Switch Account</span></li>
               <li><span onClick={() => this.props.logout()}>Log out</span></li>
               </div>
             : null

@@ -6,6 +6,9 @@ import DropdownMenu from './dropdown_menu'
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.displayUserProfile = this.displayUserProfile.bind(this);
+    this.updateUserSettings = this.updateUserSettings.bind(this);
+    this.switchAccount = this.switchAccount.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
   }
 
@@ -39,12 +42,29 @@ class NavBar extends React.Component {
       <nav className="user-avatar">
         <span className="user-name">{this.props.currentUser.username}</span>
 
-        <DropdownMenu logout={this.handleLogout} />
+        <DropdownMenu
+          displayUserProfile={this.displayUserProfile}
+          updateUserSettings={this.updateUserSettings}
+          switchAccount={this.switchAccount}
+          logout={this.handleLogout}
+          />
       </nav>
     )
   }
 
-  handleLogout () {
+  displayUserProfile() {
+    this.props.history.push(`/users/${this.props.currentUser.id}`)
+  }
+
+  updateUserSettings() {
+    this.props.history.push('/settings/profile/')
+  }
+
+  switchAccount() {
+    this.props.logout().then(() => this.props.openModal('signup'))
+  }
+
+  handleLogout() {
     this.props.logout().then(() => this.props.history.push('/'))
   }
 
