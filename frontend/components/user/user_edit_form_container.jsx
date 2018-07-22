@@ -6,7 +6,7 @@ import UserEditForm from './user_edit_form';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    user: state.entities.users[ownProps.match.params.userId],
+    user: state.entities.users[state.session.id],
     errors: state.errors.user
   };
 };

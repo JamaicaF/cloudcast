@@ -104,9 +104,3 @@ class CastSubmitForm extends React.Component {
   }
 }
 export default CastSubmitForm;
-
-// <h3 className="content-message">This upload is not public -
-//   click the Publish button to publish it</h3>
-
-// <span className="cancel-submit">Cancel</span>
-// <br />
