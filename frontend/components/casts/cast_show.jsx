@@ -14,7 +14,7 @@ class CastShow extends React.Component {
 
   componentDidMount(){
     this.props.fetchCast(this.props.match.params.castId).then(() => {
-      this.setState({loading: false});
+      this.setState({ loading: false });
     });
   }
 
