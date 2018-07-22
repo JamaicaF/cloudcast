@@ -1,5 +1,10 @@
-import { RECEIVE_PLAYBACK_CAST, TOGGLE_PLAY_PAUSE, TOGGLE_MUTE_UNMUTE } from '../actions/current_playback_actions';
 import { merge } from 'lodash';
+
+import {
+  RECEIVE_PLAYBACK_CAST,
+  TOGGLE_PLAY_PAUSE,
+  TOGGLE_MUTE_UNMUTE
+} from '../actions/current_playback_actions';
 
 const defaultState = {
   displayPlaybackBar: false,

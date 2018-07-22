@@ -1,9 +1,10 @@
+import { merge } from 'lodash';
+
 import {
   RECEIVE_ALL_CASTS,
   RECEIVE_CAST,
   REMOVE_CAST,
 } from '../actions/cast_actions';
-import { merge } from 'lodash';
 
 const CastsReducer = (state = {}, action) => {
   Object.freeze(state);
