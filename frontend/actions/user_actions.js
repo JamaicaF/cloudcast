@@ -34,3 +34,9 @@ export const updateUser = (id, user) => {
     });
   };
 };
+
+export const errorClear = () => {
+  return dispatch => {
+    return dispatch(receiveUserErrors([]));
+  };
+};
