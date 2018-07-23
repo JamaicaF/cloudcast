@@ -12,8 +12,8 @@ class UserEditForm extends React.Component {
         city: "",
         userImgFile: null,
         userImgUrl: null,
-        userCoverImgFile: null,
-        userCoverImgUrl: null,
+        // userCoverImgFile: null,
+        // userCoverImgUrl: null,
       },
       this.props.user
     );
@@ -25,6 +25,7 @@ class UserEditForm extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(this.props.user.id);
+    this.props.errorClear();
   }
 
   handleChange(field) {
@@ -34,16 +35,41 @@ class UserEditForm extends React.Component {
   }
 
   handleFile(e) {
-    constfile = e.currentTarget.files[0];
-    constfileReader = new fileReader();
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState
+      this.setState({userImgFile: file, userImgUrl: fileReader.result});
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state);
+    const formData = new FormData();
+    formData.append('user[username]', this.state.username);
+    formData.append('user[bio]', this.state.bio);
+    formData.append('user[country]', this.state.country);
+    formData.append('user[city]', this.state.city);
+    if (this.state.userImgFile) {
+      formData.append('user[user_image]', this.state.userImgFile);
+    }
+    this.props.updateUser(this.state.id, formData).then(() => {
+      this.props.history.push(`/users/${this.state.id}`);
+    });
+  }
+
+  renderErrors() {
+    if (this.props.errors.length) {
+      return (
+        <ul className="render-upload-errors">
+          {this.props.errors.map((error,idx) => (
+            <li key={`error: ${idx}`}>{error}</li>
+          ))}
+        </ul>
+      )
+    }
   }
 
   render () {
@@ -113,21 +139,7 @@ class UserEditForm extends React.Component {
             </div>
           </label>
 
-          <label className="form-field-category">
-            <div className="form-field-label">
-              <h3 className="bold-text">Cover Picture</h3>
-              <h3>Must be at least 1460px wide and 370px tall.
-              Avoid using text within your cover image, as
-              it could be cropped on smaller screens.</h3>
-            </div>
-
-            <div className="">
-              <input type="file"
-                className="file-upload-button"
-                onChange={this.handleFile}
-              />
-            </div>
-          </label>
+          {this.renderErrors()}
 
           <button className="green-button"
             onClick={this.handleSubmit}>Save Profile Settings</button>
@@ -138,3 +150,20 @@ class UserEditForm extends React.Component {
 }
 
 export default UserEditForm;
+
+
+// <label className="form-field-category">
+//   <div className="form-field-label">
+//     <h3 className="bold-text">Cover Picture</h3>
+//     <h3>Must be at least 1460px wide and 370px tall.
+//       Avoid using text within your cover image, as
+//       it could be cropped on smaller screens.</h3>
+//   </div>
+//
+//   <div className="">
+//     <input type="file"
+//       className="file-upload-button"
+//       onChange={this.handleFile}
+//       />
+//   </div>
+// </label>

@@ -33,7 +33,6 @@ class UserShow extends React.Component {
       </div>
     )
   }
-
 }
 
 export default UserShow;

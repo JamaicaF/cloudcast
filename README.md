@@ -1,14 +1,16 @@
-Cloudcast is a clone of Mixcloud, a music streaming web application. Users can upload and listen to radio shows and DJ mixes.
+# Cloudcast README
 
-View the Cloudcast wiki
+[Cloudcast live site](https://cloudcast1.herokuapp.com/)
 
-Main Features:
+Cloudcast is a fullstack music streaming web application inspired by [Mixcloud](https://www.mixcloud.com/). Users can upload and listen to radio shows and DJ mixes.
+
+[View the Cloudcast wiki](https://github.com/JamaicaF/cloudcast/wiki)
 
 Users can:
 - Freely access and listen to streaming audio content
 - Create, update and delete their own audio programs after creating a personal user account
 
-Technologies Used
+### Technologies Used:
 
 In building the application, I employed:
 - React
@@ -22,6 +24,11 @@ In building the application, I employed:
 - SQL
 - JBuilder
 
+### Current Features and Implementation:
+
+
+
+### Features in the Making:
 
 I am excited to continue making improvements to the site!
 In the future, I plan to:
