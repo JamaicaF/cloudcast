@@ -1,38 +1,39 @@
 # Cloudcast README
 
-Cloudcast is a fullstack music streaming web application inspired by [Mixcloud](https://www.mixcloud.com/). Users can upload and listen to radio shows, DJ mixes, podcasts, and other long-form audio content.
+Cloudcast is a fullstack music streaming web application inspired by [Mixcloud](https://www.mixcloud.com/). Users can share and listen to radio shows, DJ mixes, podcasts, and other long-form audio content.
 
 [Cloudcast live site](https://cloudcast1.herokuapp.com/)
 
-Users can:
+Cloudcast users can:
 - Freely access and listen to a variety of streaming audio programming
-- Create, update, and delete their own audio programs after creating a personal user account
+- Upload, edit, and delete their own audio programs after creating a personal user account
 
 Cloudcast is and will remain open source.
 
 [View the Cloudcast wiki](https://github.com/JamaicaF/cloudcast/wiki)
-
-## Technologies Used:
-
-In building the application, I employed:
-- React
-- Redux
-- Javascript
-- JSX
-- HTML
-- CSS
-- Ruby
-- Ruby on Rails
-- SQL
-- JBuilder
 
 # Current Features and Implementation:
 
 ### Welcome page
 ![](https://i.imgur.com/FYfr5FF.jpg)
 
+Users can explore and listen to all audio programming without creating an account. Cloudcast programs are primarily accessible from an indexed list of audio content. Upon first play, an audio playback bar loads at the bottom of the page, which persists as the user navigates the site.
+
 ### Featured Cloudcasts page
 ![](https://i.imgur.com/D3SQ4cx.jpg)
+
+From any page in the site, users can create a new account or login. User sessions are authenticated in Rails using the BCrypt hashing algorithm.
+Users are required to provide a unique username and email when signing up for an account.
+
+Before uploading content, users are prompted to login. Upon login, users have to option to create new Cloudcast programs, as well as update or destroy their existing content. Any existing Cloudcast can only be modified by the original content creator.   
+
+### Backend Structure
+
+Cloudcast follows RESTful API design, and was built using the Ruby on Rails framework and a PostgreSQL database. Users and Casts are the two primary database models. Image and audio files are stored with ActiveStorage and Amazon Web Services. Data requests are made through AJAX and completed by a JSON API.
+
+### Frontend Structure
+
+Cloudcast is a single page app built with React.js and Redux. All pages are composed of React components which are rendered at a root url.
 
 # Features in the Making:
 
