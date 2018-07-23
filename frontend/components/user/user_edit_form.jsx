@@ -52,13 +52,17 @@ class UserEditForm extends React.Component {
         <div className="document-title">
           <h2>Your profile settings</h2>
 
-          <Link className=""
+          <Link className="visit-profile-link"
             to={`/users/${this.props.user.id}/`}>Visit your profile</Link>
         </div>
 
-        <form onSubmit={this.handleSubmit}>
-          <label><strong>Display name</strong>
-            Spaces and special characters are fine.
+        <form className="upload-form" onSubmit={this.handleSubmit}>
+          <label className="form-field-category">
+            <div className="form-field-label">
+              <h3 className="bold-text">Display name</h3>
+              <h3>Spaces and special characters are fine.</h3>
+            </div>
+
             <input type="text"
               className="form-input-field"
               value={this.state.username}
@@ -67,8 +71,12 @@ class UserEditForm extends React.Component {
             <br/>
           </label>
 
-          <label><strong>Biography</strong>
-            Up to 1,000 characters.
+          <label className="form-field-category">
+            <div className="form-field-label">
+              <h3 className="bold-text">Biography</h3>
+              <h3>Up to 1,000 characters.</h3>
+            </div>
+
             <textarea
               className="form-input-field"
               placeholder="Enter some more info about you"
@@ -77,8 +85,12 @@ class UserEditForm extends React.Component {
               />
           </label>
 
-          <label><strong>Country and city</strong>
-            Where are you from?
+          <label className="form-field-category">
+            <div className="form-field-label">
+              <h3 className="bold-text">Country and city</h3>
+              <h3>Where are you from?</h3>
+            </div>
+
             <input type="text"
               className="form-input-field"
               placeholder="e.g. London"
@@ -87,16 +99,34 @@ class UserEditForm extends React.Component {
               />
           </label>
 
-          <label><strong>Profile Picture</strong>
-            JPEG, GIF or PNG, 10MB max.
-            <button>Choose file</button>
+          <label className="form-field-category">
+            <div className="form-field-label">
+              <h3 className="bold-text">Profile Picture</h3>
+              <h3>JPEG, GIF or PNG, 10MB max.</h3>
+            </div>
+
+            <div className="">
+              <input type="file"
+                className="file-upload-button"
+                onChange={this.handleFile}
+              />
+            </div>
           </label>
 
-          <label><strong>Cover Picture</strong>
-            Must be at least 1460px wide and 370px tall.
-            Avoid using text within your cover image, as
-            it could be cropped on smaller screens.
-            <button>Choose file</button>
+          <label className="form-field-category">
+            <div className="form-field-label">
+              <h3 className="bold-text">Cover Picture</h3>
+              <h3>Must be at least 1460px wide and 370px tall.
+              Avoid using text within your cover image, as
+              it could be cropped on smaller screens.</h3>
+            </div>
+
+            <div className="">
+              <input type="file"
+                className="file-upload-button"
+                onChange={this.handleFile}
+              />
+            </div>
           </label>
 
           <button className="green-button"

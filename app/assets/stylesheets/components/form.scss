@@ -35,6 +35,7 @@ button {
 
 .document-title {
   padding: 20px;
+  display: flex;
   align-self: flex-start;
   // border-bottom: 2px solid #ebf0f2;
 }
@@ -81,4 +82,24 @@ button {
   margin: 20px 80px;
   display: flex;
   flex-direction: row;
+}
+
+.visit-profile-link {
+  box-sizing: border-box;
+  color: #4fa6d3;
+  padding: 14px 200px;
+}
+
+.form-field-category {
+  display: flex;
+}
+
+.form-field-label {
+  width: 250px;
+}
+
+.bold-text {
+  display: block;
+  color: #0a1e2c;
+  font-weight: 600;
 }
