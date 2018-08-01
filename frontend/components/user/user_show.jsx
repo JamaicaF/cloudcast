@@ -28,7 +28,7 @@ class UserShow extends React.Component {
 
   render () {
     const userCasts = this.props.user.castIds.map((cast) => {
-      debugger
+      // debugger
       return <CastIndexItem key={`cast-${cast.id}`}
         cast={cast}
         currentPlayback={this.props.currentPlayback}

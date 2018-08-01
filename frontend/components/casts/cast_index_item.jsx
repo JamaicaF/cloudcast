@@ -14,6 +14,7 @@ class CastIndexItem extends React.Component {
   }
 
   render () {
+    // debugger
     return (
       <div className="cast-item">
         <div className="cast-image-small">
@@ -38,7 +39,8 @@ class CastIndexItem extends React.Component {
 
           <span className="item-el">by</span>
           &nbsp;
-          <span className="cast-author">{this.props.cast.castCreator}</span>
+          <Link className="cast-author"
+            to={`/users/${this.props.cast.userId}`}>{this.props.cast.castCreator}</Link>
         </li>
       </div>
     )
