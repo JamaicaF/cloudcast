@@ -27,8 +27,8 @@ class UserShow extends React.Component {
   }
 
   render () {
-    const userCasts = this.props.user.castIds.map((cast) => {
-      // debugger
+    const userCastsRev = this.props.user.castIds.reverse();
+    const userCastFeed = userCastsRev.map((cast) => {
       return <CastIndexItem key={`cast-${cast.id}`}
         cast={cast}
         currentPlayback={this.props.currentPlayback}
@@ -57,7 +57,7 @@ class UserShow extends React.Component {
         <h2 className="document-title">Shows</h2>
         <div className="upload-content">
           <ul>
-            {userCasts}
+            {userCastFeed}
           </ul>
         </div>
       </div>

@@ -8,7 +8,8 @@ class CastIndex extends React.Component {
   }
 
   render() {
-    const casts = this.props.casts.map((cast) => {
+    const castsRev = this.props.casts.reverse();
+    const castFeed = castsRev.map((cast) => {
       return <CastIndexItem key={`cast-${cast.id}`}
         cast={cast}
         currentPlayback={this.props.currentPlayback}
@@ -22,7 +23,7 @@ class CastIndex extends React.Component {
         <h2 className="document-title">Featured</h2>
         <div className="upload-content">
           <ul>
-            {casts}
+            {castFeed}
           </ul>
         </div>
       </div>

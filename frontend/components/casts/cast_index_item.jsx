@@ -14,7 +14,6 @@ class CastIndexItem extends React.Component {
   }
 
   render () {
-    // debugger
     return (
       <div className="cast-item">
         <div className="cast-image-small">
