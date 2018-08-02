@@ -4,6 +4,13 @@
   background: rgb(19, 20, 25);
 }
 
+.user-page-header {
+  display: flex;
+  justify-content: space-around;
+  background: rgb(19, 20, 25);
+  padding: 80px;
+}
+
 .cast-show-title {
   font-size: 56px;
   font-weight: 300;
@@ -18,6 +25,14 @@
   color: white;
 }
 
+.user-page-body {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 100px;
+  align-items: flex-start;
+
+}
+
 .show-page-body {
   display: flex;
   flex-direction: column;
@@ -28,6 +43,12 @@
 .cast-creator-actions {
   display: flex;
   position: relative;
+  color: #697f95;
+  font-size: 18px;
+  margin: 40px;
+}
+
+.user-actions {
   color: #697f95;
   font-size: 18px;
   margin: 40px;

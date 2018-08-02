@@ -27,6 +27,7 @@ class UserShow extends React.Component {
   }
 
   render () {
+    // debugger
     const userCastsRev = this.props.user.castIds.reverse();
     const userCastFeed = userCastsRev.map((cast) => {
       return <CastIndexItem key={`cast-${cast.id}`}
@@ -41,13 +42,16 @@ class UserShow extends React.Component {
 
     return (
       <div className="show-content">
-        <div className="show-page-header">
-          <h2 className="document-title">{this.props.user.username}</h2>
+        <div className="user-page-header">
         </div>
-        <div className="show-page-body">
+
+        <div className="user-page-body">
+          <div className="user-page-title">
+            <h2 className="document-title">{this.props.user.username}</h2>
+          </div>
           {(this.props.user.id === this.props.currentUser
           ) ? (
-            <div className="cast-creator-actions">
+            <div className="user-actions">
               <span className="cast-action-title"
                 onClick={this.handleEdit}>Edit Profile</span>
             </div>
