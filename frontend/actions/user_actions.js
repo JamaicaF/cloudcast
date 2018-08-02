@@ -3,10 +3,11 @@ import * as UserApiUtil from '../util/user_api_util';
 export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS";
 
-const receiveUser = (user) => {
+const receiveUser = ({user, casts}) => {
   return {
     type: RECEIVE_USER,
-    user
+    user,
+    casts
   };
 };
 
@@ -19,8 +20,8 @@ const receiveUserErrors = (errors) => {
 
 export const fetchUser = (id) => {
   return dispatch => {
-    return UserApiUtil.fetchUser(id).then((user) => {
-      return dispatch(receiveUser(user));
+    return UserApiUtil.fetchUser(id).then((payload) => {
+      return dispatch(receiveUser(payload));
     });
   };
 };
