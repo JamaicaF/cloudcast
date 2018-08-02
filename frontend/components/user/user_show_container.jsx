@@ -17,6 +17,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchUser: (id) => dispatch(fetchUser(id)),
+    receivePlaybackCast: (id) => dispatch(receivePlaybackCast(id)),
+    togglePlayPause: () => dispatch(togglePlayPause())
   };
 };
 

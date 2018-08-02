@@ -42,7 +42,7 @@ class CastIndexItem extends React.Component {
           <span className="item-el">by</span>
           &nbsp;
           <Link className="cast-author"
-            to={`/users/${this.props.cast.user_id}`}>{username}</Link>
+            to={`/users/${this.props.cast.userId}`}>{username}</Link>
         </li>
       </div>
     )

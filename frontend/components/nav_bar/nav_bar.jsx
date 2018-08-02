@@ -61,7 +61,7 @@ class NavBar extends React.Component {
   }
 
   switchAccount() {
-    this.props.logout().then(() => this.props.openModal('signup'))
+    this.props.logout().then(() => this.props.openModal('login'))
   }
 
   handleLogout() {
