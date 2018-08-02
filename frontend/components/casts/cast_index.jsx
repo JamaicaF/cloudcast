@@ -12,6 +12,7 @@ class CastIndex extends React.Component {
     const castFeed = castsRev.map((cast) => {
       return <CastIndexItem key={`cast-${cast.id}`}
         cast={cast}
+        users={this.props.users}
         currentPlayback={this.props.currentPlayback}
         receivePlaybackCast={this.props.receivePlaybackCast}
         togglePlayPause={this.props.togglePlayPause}

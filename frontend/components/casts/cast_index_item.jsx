@@ -14,6 +14,11 @@ class CastIndexItem extends React.Component {
   }
 
   render () {
+    const castUserId = this.props.cast.userId;
+    debugger
+
+    const username = this.props.users ? this.props.users[castUserId].username : this.props.user.username;
+
     return (
       <div className="cast-item">
         <div className="cast-image-small">
@@ -39,7 +44,7 @@ class CastIndexItem extends React.Component {
           <span className="item-el">by</span>
           &nbsp;
           <Link className="cast-author"
-            to={`/users/${this.props.cast.userId}`}>{this.props.cast.castCreator}</Link>
+            to={`/users/${this.props.cast.user_id}`}>{username}</Link>
         </li>
       </div>
     )

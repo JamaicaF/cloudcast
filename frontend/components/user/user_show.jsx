@@ -28,10 +28,11 @@ class UserShow extends React.Component {
 
   render () {
     debugger
-    const userCastsRev = this.props.user.casts.reverse();
+    const userCastsRev = this.props.casts.reverse();
     const userCastFeed = userCastsRev.map((cast) => {
       return <CastIndexItem key={`cast-${cast.id}`}
         cast={cast}
+        user={this.props.user}
         currentPlayback={this.props.currentPlayback}
         receivePlaybackCast={this.props.receivePlaybackCast}
         togglePlayPause={this.props.togglePlayPause}
@@ -43,6 +44,10 @@ class UserShow extends React.Component {
     return (
       <div className="show-content">
         <div className="user-page-header">
+        </div>
+
+        <div className="test">
+          {this.props.user.profileImage}
         </div>
 
         <div className="user-page-body">

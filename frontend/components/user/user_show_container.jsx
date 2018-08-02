@@ -8,6 +8,7 @@ import UserShow from './user_show';
 const mapStateToProps = (state, ownProps) => {
   return {
     user: state.entities.users[ownProps.match.params.userId] || {},
+    casts: Object.values(state.entities.casts) || [],
     currentUser: state.session.id,
     currentPlayback: state.ui.currentPlayback
   };

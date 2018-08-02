@@ -7,6 +7,7 @@ import CastIndex from './cast_index';
 const mapStateToProps = state => {
   return {
     casts: Object.values(state.entities.casts),
+    users: state.entities.users,
     currentPlayback: state.ui.currentPlayback
   };
 };
