@@ -15,8 +15,6 @@ class CastIndexItem extends React.Component {
 
   render () {
     const castUserId = this.props.cast.userId;
-    debugger
-
     const username = this.props.users ? this.props.users[castUserId].username : this.props.user.username;
 
     return (

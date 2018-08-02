@@ -27,7 +27,6 @@ class UserShow extends React.Component {
   }
 
   render () {
-    debugger
     const userCastsRev = this.props.casts.reverse();
     const userCastFeed = userCastsRev.map((cast) => {
       return <CastIndexItem key={`cast-${cast.id}`}
