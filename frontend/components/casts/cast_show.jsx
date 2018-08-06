@@ -57,7 +57,8 @@ class CastShow extends React.Component {
               <div className="cast-show-creator">
                 <span className="item-el">by</span>
                 &nbsp;
-                <span>{this.props.cast.castCreator}</span>
+                <Link className=""
+                  to={`/users/${this.props.cast.userId}/`}>{this.props.cast.castCreator}</Link>
               </div>
             </li>
           </div>
@@ -81,9 +82,9 @@ class CastShow extends React.Component {
             </div>
           ) : null}
 
-          <h3>
+          <div className="item-el">
             {this.props.cast.description}
-          </h3>
+          </div>
         </div>
       </div>
     );

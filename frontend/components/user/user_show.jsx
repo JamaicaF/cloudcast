@@ -75,8 +75,11 @@ class UserShow extends React.Component {
           <div className="user-bio">
 
             <div className="cast-index-title">
-              <i class="fas fa-map-marker-alt"></i>
-              &nbsp;{this.props.user.city}</div>
+              {(this.props.user.city
+              ) ? (
+                <i class="fas fa-map-marker-alt"></i>
+              ) : null}&nbsp;{this.props.user.city}
+              </div>
             <br />
 
             <div className="item-el">{this.props.user.bio}</div>
