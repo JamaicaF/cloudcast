@@ -25,9 +25,10 @@ button {
   background: #50b348;
   font-weight: 600;
   padding: 8px 20px;
+  max-width: 130px;
 }
 
-.upload-form {
+.user-form-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,6 +41,17 @@ button {
   // border-bottom: 2px solid #ebf0f2;
 }
 
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-upload-form {
+  display: flex;
+  flex-direction: column;
+}
+
 .form-input-field {
   background: white;
   color: black;
@@ -50,6 +62,10 @@ button {
   border: 1px solid rgba(10,30,44,.15);
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(10,30,44,.05);
+}
+
+.user-input-field {
+  width: 40%;
 }
 
 .render-session-errors {
@@ -102,4 +118,10 @@ button {
   display: block;
   color: #0a1e2c;
   font-weight: 600;
+}
+
+.sub-text {
+  display: block;
+  color: #697f95;
+  font-weight: 400;
 }

@@ -74,7 +74,7 @@ class UserEditForm extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="user-form-content">
         <div className="document-title">
           <h2>Your profile settings</h2>
 
@@ -82,15 +82,15 @@ class UserEditForm extends React.Component {
             to={`/users/${this.props.user.id}/`}>Visit your profile</Link>
         </div>
 
-        <form className="upload-form" onSubmit={this.handleSubmit}>
+        <form className="user-upload-form" onSubmit={this.handleSubmit}>
           <label className="form-field-category">
             <div className="form-field-label">
               <h3 className="bold-text">Display name</h3>
-              <h3>Spaces and special characters are fine.</h3>
+              <h3 className="sub-text">Spaces and special characters are fine.</h3>
             </div>
 
             <input type="text"
-              className="form-input-field"
+              className="form-input-field user-input-field"
               value={this.state.username}
               onChange={this.handleChange('username')}
               />
@@ -100,11 +100,11 @@ class UserEditForm extends React.Component {
           <label className="form-field-category">
             <div className="form-field-label">
               <h3 className="bold-text">Biography</h3>
-              <h3>Up to 1,000 characters.</h3>
+              <h3 className="sub-text">Up to 1,000 characters.</h3>
             </div>
 
             <textarea
-              className="form-input-field"
+              className="form-input-field user-input-field"
               placeholder="Enter some more info about you"
               value={this.state.bio || ""}
               onChange={this.handleChange('bio')}
@@ -113,12 +113,12 @@ class UserEditForm extends React.Component {
 
           <label className="form-field-category">
             <div className="form-field-label">
-              <h3 className="bold-text">Country and city</h3>
-              <h3>Where are you from?</h3>
+              <h3 className="bold-text">City</h3>
+              <h3 className="sub-text">Where are you from?</h3>
             </div>
 
             <input type="text"
-              className="form-input-field"
+              className="form-input-field user-input-field"
               placeholder="e.g. London"
               value={this.state.city || ""}
               onChange={this.handleChange('city')}
@@ -128,7 +128,7 @@ class UserEditForm extends React.Component {
           <label className="form-field-category">
             <div className="form-field-label">
               <h3 className="bold-text">Profile Picture</h3>
-              <h3>JPEG, GIF or PNG, 10MB max.</h3>
+              <h3 className="sub-text">JPEG, GIF or PNG, 10MB max.</h3>
             </div>
 
             <div className="">

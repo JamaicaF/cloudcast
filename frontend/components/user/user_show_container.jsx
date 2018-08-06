@@ -6,6 +6,7 @@ import { receivePlaybackCast, togglePlayPause } from '../../actions/current_play
 import UserShow from './user_show';
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger
   return {
     user: state.entities.users[ownProps.match.params.userId] || {},
     casts: Object.values(state.entities.casts) || [],

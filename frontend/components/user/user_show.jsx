@@ -10,7 +10,9 @@ class UserShow extends React.Component {
     this.handleEdit = this.handleEdit.bind(this);
     this.togglePlayPause = this.togglePlayPause.bind(this);
   }
+
   componentDidMount() {
+    // debugger
     this.props.fetchUser(this.props.match.params.userId).then(() => {
       this.setState({ loading: false });
     });
@@ -27,8 +29,8 @@ class UserShow extends React.Component {
   }
 
   render () {
-    const userCastsRev = this.props.casts.reverse();
-    const userCastFeed = userCastsRev.map((cast) => {
+    // debugger
+    const userCastFeed = this.props.casts.map((cast) => {
       return <CastIndexItem key={`cast-${cast.id}`}
         cast={cast}
         user={this.props.user}
