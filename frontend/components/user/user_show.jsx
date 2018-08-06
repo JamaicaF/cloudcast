@@ -51,7 +51,7 @@ class UserShow extends React.Component {
           {this.props.user.profileImage}
         </div>
 
-        <div className="user-page-body">
+        <div className="user-page-content">
           <div className="user-page-title">
             <h2 className="document-title">{this.props.user.username}</h2>
           </div>
@@ -65,10 +65,22 @@ class UserShow extends React.Component {
         </div>
 
         <h2 className="document-title">Shows</h2>
-        <div className="upload-content">
-          <ul>
-            {userCastFeed}
-          </ul>
+        <div className="user-page-body">
+          <div className="user-show-index">
+            <ul>
+              {userCastFeed}
+            </ul>
+          </div>
+
+          <div className="user-bio">
+
+            <div className="cast-index-title">
+              <i class="fas fa-map-marker-alt"></i>
+              &nbsp;{this.props.user.city}</div>
+            <br />
+
+            <div className="item-el">{this.props.user.bio}</div>
+          </div>
         </div>
       </div>
     )

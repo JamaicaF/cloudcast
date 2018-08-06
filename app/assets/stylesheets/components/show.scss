@@ -25,12 +25,11 @@
   color: white;
 }
 
-.user-page-body {
+.user-page-content {
   display: flex;
   justify-content: space-around;
   margin-left: 100px;
   align-items: flex-start;
-
 }
 
 .show-page-body {
@@ -59,4 +58,20 @@
   padding: 20px 40px;
   border: 1px solid #8196a7;
   border-radius: 4px;
+}
+
+.user-page-body {
+  display: flex;
+  justify-content: space-around;
+}
+
+.user-show-index {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-bio {
+  max-width: 300px;
 }
