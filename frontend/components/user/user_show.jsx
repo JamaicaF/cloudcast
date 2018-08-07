@@ -12,7 +12,6 @@ class UserShow extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
     this.props.fetchUser(this.props.match.params.userId).then(() => {
       this.setState({ loading: false });
     });
@@ -76,7 +75,7 @@ class UserShow extends React.Component {
             <div className="cast-index-title">
               {(this.props.user.city
               ) ? (
-                <i class="fas fa-map-marker-alt"></i>
+                <i className="fas fa-map-marker-alt"></i>
               ) : null}&nbsp;{this.props.user.city}
               </div>
             <br />
