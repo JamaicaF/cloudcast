@@ -54,10 +54,10 @@ class CastShow extends React.Component {
                 to={`/casts/${this.props.cast.id}/`}>{this.props.cast.title}</Link>
               <br />
 
-              <div className="cast-show-creator">
+              <div>
                 <span className="item-el">by</span>
                 &nbsp;
-                <Link className=""
+                <Link className="cast-show-creator"
                   to={`/users/${this.props.cast.userId}/`}>{this.props.cast.castCreator}</Link>
               </div>
             </li>

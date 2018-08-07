@@ -72,7 +72,7 @@ class UserShow extends React.Component {
 
           <div className="user-bio">
 
-            <div className="cast-index-title">
+            <div className="user-location">
               {(this.props.user.city
               ) ? (
                 <i className="fas fa-map-marker-alt"></i>
