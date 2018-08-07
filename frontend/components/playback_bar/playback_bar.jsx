@@ -54,10 +54,11 @@ class PlaybackBar extends React.Component {
               to={`/casts/${this.props.castToPlay.id}/`}>{this.props.castToPlay.title}</Link>
             <br />
 
-            <div className="playback-cast-show-creator">
+            <div>
               <span className="">by</span>
               &nbsp;
-              <span>{this.props.castToPlay.castCreator}</span>
+              <Link className="playback-cast-show-creator"
+                to={`/users/${this.props.castToPlay.userId}/`}>{this.props.castToPlay.castCreator}</Link>
             </div>
           </div>
 

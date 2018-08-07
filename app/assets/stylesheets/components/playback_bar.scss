@@ -22,7 +22,6 @@
   font-size: 24px;
   cursor: pointer;
   margin: 12px 24px 0 24px;
-
 }
 
 .playback-cast-text-info {
@@ -48,4 +47,8 @@
 
 .audio-tag {
   display: none;
+}
+
+.playback-cast-show-title:hover, .playback-cast-show-creator:hover {
+  color: #cdd9e4;
 }
