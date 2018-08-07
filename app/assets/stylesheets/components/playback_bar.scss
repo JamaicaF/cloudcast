@@ -21,7 +21,7 @@
   color: white;
   font-size: 24px;
   cursor: pointer;
-  margin: 12px 24px;
+  margin: 12px 24px 0 24px;
 
 }
 
@@ -36,11 +36,11 @@
   color: white;
   font-size: 22px;
   cursor: pointer;
-  margin: 13px;
+  margin: 13px 13px 0 13px;
 }
 
 .progress-bar-container {
-  margin: 20px 20px;
+  margin: 20px 20px 0 20px;
   border-radius: 5px;
   // width: 100%;
   box-sizing: content-box;
