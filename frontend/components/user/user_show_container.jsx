@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+import { fetchCasts } from '../../actions/cast_actions';
 import { fetchUser } from '../../actions/user_actions';
 import { receivePlaybackCast, togglePlayPause } from '../../actions/current_playback_actions';
 import UserShow from './user_show';
@@ -19,6 +20,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchUser: (id) => dispatch(fetchUser(id)),
+    fetchCasts: () => dispatch(fetchCasts()),
     receivePlaybackCast: (id) => dispatch(receivePlaybackCast(id)),
     togglePlayPause: () => dispatch(togglePlayPause())
   };

@@ -12,8 +12,10 @@ class UserShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.match.params.userId).then(() => {
-      this.setState({ loading: false });
+    this.props.fetchCasts().then(()  => {
+      this.props.fetchUser(this.props.match.params.userId).then(() => {
+        this.setState({ loading: false });
+      });
     });
   }
 
