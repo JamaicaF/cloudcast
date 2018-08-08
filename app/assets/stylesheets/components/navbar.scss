@@ -57,7 +57,12 @@
   width: 180px;
   margin: 20px 80px;
   display: flex;
-  justify-content: space-around;
+}
+
+.user-avatar img {
+  height: 30px;
+  width: 30px;
+  border-radius: 4px;
 }
 
 .nav-el {

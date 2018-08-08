@@ -44,6 +44,7 @@ class NavBar extends React.Component {
   renderUserAvatar() {
     return(
       <nav className="user-avatar">
+        <img src={this.props.currentUser.profileImage} />
         <span className="user-name">{this.props.currentUser.username}</span>
 
         <DropdownMenu
