@@ -53,7 +53,7 @@ class UserEditForm extends React.Component {
     formData.append('user[country]', this.state.country);
     formData.append('user[city]', this.state.city);
     if (this.state.userImgFile) {
-      formData.append('user[user_image]', this.state.userImgFile);
+      formData.append('user[profile_image]', this.state.userImgFile);
     }
     this.props.updateUser(this.state.id, formData).then(() => {
       this.props.history.push(`/users/${this.state.id}`);
