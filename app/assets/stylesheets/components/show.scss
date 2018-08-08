@@ -11,6 +11,26 @@
   padding: 80px;
 }
 
+.user-show-avatar {
+  display: flex;
+  margin-left: 60px;
+}
+
+.user-username {
+  color: #34495e;
+  font-weight: 300;
+  margin: 28px;
+  font-size: 30px;
+}
+
+.user-page-content img {
+  height: 160px;
+  width: 160px;
+  background: #beccd5;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
 .cast-show-title {
   font-size: 56px;
   font-weight: 300;
@@ -31,8 +51,7 @@
 
 .user-page-content {
   display: flex;
-  justify-content: space-around;
-  margin-left: 100px;
+  justify-content: space-between;
   align-items: flex-start;
 }
 

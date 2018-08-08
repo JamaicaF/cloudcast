@@ -45,14 +45,13 @@ class UserShow extends React.Component {
         <div className="user-page-header">
         </div>
 
-        <div className="test">
-          {this.props.user.profileImage}
-        </div>
-
         <div className="user-page-content">
-          <div className="user-page-title">
-            <h2 className="document-title">{this.props.user.username}</h2>
+          <div className="user-show-avatar">
+            <img src={this.props.user.profileImage} />
+
+            <div className="user-username">{this.props.user.username}</div>
           </div>
+
           {(this.props.user.id === this.props.currentUser
           ) ? (
             <div className="user-actions">
