@@ -2,8 +2,18 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  min-height: 52px;
   background: rgba(39,58,75,.97);
+}
+
+.logo-content {
+  display: inline-block;
+}
+
+.logo-content img {
+  height: 24px;
+  width: 24px;
+  margin: 0 10px;
+  display: inline-block;
 }
 
 .logo {
@@ -32,7 +42,7 @@
 
 .nav-start-session {
   color: white;
-  display: inline-block;
+  // display: inline-block;
   float: right;
   width: 180px;
   margin: 10px 80px;

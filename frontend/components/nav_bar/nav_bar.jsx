@@ -15,7 +15,11 @@ class NavBar extends React.Component {
   renderNavOptions() {
     return(
       <div>
-        <NavLink className="logo" to="/">Cloudcast</NavLink>
+        <div className="logo-content">
+          <NavLink className="logo" to="/">
+            <img className="logo-image" src={window.cloudLogo} />
+            Cloudcast</NavLink>
+        </div>
         <NavLink className="nav-link" to="/upload/">UPLOAD</NavLink>
         <NavLink className="nav-link" to="/discover/">DISCOVER</NavLink>
       </div>
