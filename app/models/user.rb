@@ -20,9 +20,9 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true}
 
   attr_reader :password
+  before_save :ensure_profile_image
 
   has_many :casts
-
   has_one_attached :profile_image
   # has_one_attached :cover_image
 
@@ -62,4 +62,9 @@ class User < ApplicationRecord
     self.session_token ||= User.generate_session_token
   end
 
+  def ensure_profile_image
+    unless self.profile_image.attached?
+      self.profile_image.attach(io: File.open('app/assets/images/user_default.jpg'), filename: 'user_default.jpg')
+    end
+  end
 end
