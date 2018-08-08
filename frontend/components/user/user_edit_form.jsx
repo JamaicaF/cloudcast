@@ -73,6 +73,10 @@ class UserEditForm extends React.Component {
   }
 
   render () {
+    const preview = this.state.userImgUrl
+      ? <img src={this.state.userImgUrl} />
+      : null;
+
     return (
       <div className="user-form-content">
         <div className="document-title">
@@ -131,11 +135,12 @@ class UserEditForm extends React.Component {
               <h3 className="sub-text">JPEG, GIF or PNG, 10MB max.</h3>
             </div>
 
-            <div className="">
-              <input type="file"
-                className="file-upload-button"
-                onChange={this.handleFile}
-              />
+              <div className="cast-image-large">
+                {preview}
+                <input type="file"
+                  className="file-upload-button"
+                  onChange={this.handleFile}
+                />
             </div>
           </label>
 
