@@ -73,9 +73,9 @@ class UserEditForm extends React.Component {
   }
 
   render () {
-    const preview = this.state.userImgUrl
-      ? <img src={this.state.userImgUrl} />
-      : null;
+    const preview = (this.state.userImgUrl
+      ) ? (<img src={this.state.userImgUrl} />
+      ) : (<img src={this.props.user.profileImage} />);
 
     return (
       <div className="user-form-content">
