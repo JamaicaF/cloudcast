@@ -57,9 +57,9 @@ class CastSubmitForm extends React.Component {
   }
 
   render() {
-    const preview = this.state.castImgUrl
-      ? <img src={this.state.castImgUrl} />
-      : null;
+    const preview = (this.state.castImgUrl
+    ) ? (<img src={this.state.castImgUrl} />
+    )  : (<img src={this.props.cast.castImage} />);
 
     return(
       <div className="upload-content">
