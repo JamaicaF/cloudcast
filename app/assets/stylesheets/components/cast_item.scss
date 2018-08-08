@@ -7,16 +7,14 @@
   border-bottom: 1px solid #ebf0f2;
 }
 
-.cast-image-small {
-  height: 160px;
-  width: 160px;
-  background: #beccd5;
+.cast-item img{
+  max-height: 160px;
+  max-width: 160px;
 }
 
-.cast-image-large {
-  height: 300px;
-  width: 300px;
-  background: #beccd5;
+.cast-image-large img{
+  max-height: 300px;
+  max-width: 300px;
 }
 
 .index-play-button {

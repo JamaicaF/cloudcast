@@ -38,9 +38,7 @@ class PlaybackBar extends React.Component {
     if (this.props.displayPlaybackBar) {
       return (
         <div className="playback-bar">
-          <div className="cast-img-playback">
             <img src={this.props.castToPlay.castImage} />
-          </div>
 
           <div className="playback-play-icon" onClick={this.togglePlayPause}>
             {this.props.playback

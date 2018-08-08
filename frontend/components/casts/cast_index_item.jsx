@@ -19,12 +19,10 @@ class CastIndexItem extends React.Component {
 
     return (
       <div className="cast-item">
-        <div className="cast-image-small">
           {this.props.cast.castImage
             ? <img src={this.props.cast.castImage} />
             : null
           }
-        </div>
 
         <div className="index-play-button" onClick={this.togglePlayPause}>
           {this.props.currentPlayback.playback &&
