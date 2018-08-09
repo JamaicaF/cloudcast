@@ -1,6 +1,8 @@
 const renderAudioLength = (sec) => {
   function formatLeadingZero(num) {
-    if (num < 10) {
+    if (isNaN(num)) {
+      return '00';
+    } else if (num < 10) {
       return `0${num}`;
     }
     return `${num}`;

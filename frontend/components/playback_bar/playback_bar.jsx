@@ -45,12 +45,6 @@ class PlaybackBar extends React.Component {
     });
   }
 
-  // resetTime() {
-  //   this.setState({
-  //     elapsedTime: 0,
-  //   })
-  // }
-
   bar() {
     if (this.props.displayPlaybackBar) {
       return (
@@ -82,7 +76,7 @@ class PlaybackBar extends React.Component {
 
 
           <div className="progress-bar-container">
-            <input type="range" min="1" max="100" value={this.state.percentPlayed}
+            <input type="range" min="1" max="100" value={this.state.percentPlayed || 0}
               className="slider" id="myRange" />
           </div>
 
