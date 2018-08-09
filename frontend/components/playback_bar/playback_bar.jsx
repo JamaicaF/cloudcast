@@ -49,7 +49,7 @@ class PlaybackBar extends React.Component {
     if (this.props.displayPlaybackBar) {
       return (
         <div className="playback-bar">
-            <img src={this.props.castToPlay.castImage} />
+          <img src={this.props.castToPlay.castImage} />
 
           <div className="playback-play-icon" onClick={this.togglePlayPause}>
             {this.props.playback
@@ -71,17 +71,14 @@ class PlaybackBar extends React.Component {
             </div>
           </div>
 
-
-            <span className="playback-time-info">{renderAudioLength(this.state.elapsedTime)}</span>
-
+          <span className="playback-time-info">{renderAudioLength(this.state.elapsedTime)}</span>
 
           <div className="progress-bar-container">
             <input type="range" min="1" max="100" value={this.state.percentPlayed || 0}
               className="slider" id="myRange" />
           </div>
 
-            <span className="playback-time-info">- {renderAudioLength(this.state.remainingTime)}</span>
-
+          <span className="playback-time-info">- {renderAudioLength(this.state.remainingTime)}</span>
 
           <div className="playback-volume-icon" onClick={this.toggleMuteUnmute}>
             {this.props.mute
@@ -115,7 +112,6 @@ class PlaybackBar extends React.Component {
     );
   }
 }
-
 
 export default PlaybackBar;
 
