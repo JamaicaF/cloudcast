@@ -27,8 +27,14 @@
 .playback-cast-text-info {
   color: white;
   font-size: 14px;
-  min-width: 200px;
+  min-width: 100px;
   margin: 6px 10px 0 0;
+}
+
+.playback-time-info {
+  color: white;
+  font-size: 14px;
+  margin: 16px;
 }
 
 .playback-volume-icon {
@@ -41,7 +47,6 @@
 .progress-bar-container {
   margin: 20px 20px 0 20px;
   border-radius: 5px;
-  // width: 100%;
   box-sizing: content-box;
 }
 

@@ -6,10 +6,14 @@ import renderAudioLength from '../../util/util_util';
 class PlaybackBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      elapsedTime: 0,
+      percentPlayed: 0,
+    };
     this.audioTag = React.createRef();
     this.togglePlayPause = this.togglePlayPause.bind(this);
     this.toggleMuteUnmute = this.toggleMuteUnmute.bind(this);
-    // this.renderAudioLength = this.renderAudioLength.bind(this);
+    this.updateTime = this.updateTime.bind(this);
   }
 
   componentDidUpdate(oldProps) {
@@ -30,8 +34,21 @@ class PlaybackBar extends React.Component {
     this.props.toggleMuteUnmute();
   }
 
-  // renderAudioLength() {
-  //   renderAudioLength(this.audioTag.current.duration)
+  updateTime(e) {
+    const elapsedTime = this.audioTag.current.currentTime;
+    const duration  = this.audioTag.current.duration;
+    const percentPlayed = (elapsedTime / duration) * 100;
+    this.setState({
+      elapsedTime,
+      remainingTime: duration - elapsedTime,
+      percentPlayed,
+    });
+  }
+
+  // resetTime() {
+  //   this.setState({
+  //     elapsedTime: 0,
+  //   })
   // }
 
   bar() {
@@ -60,16 +77,17 @@ class PlaybackBar extends React.Component {
             </div>
           </div>
 
+
+            <span className="playback-time-info">{renderAudioLength(this.state.elapsedTime)}</span>
+
+
           <div className="progress-bar-container">
-            <input type="range" min="1" max="100" className="slider" id="myRange" />
+            <input type="range" min="1" max="100" value={this.state.percentPlayed}
+              className="slider" id="myRange" />
           </div>
 
-          <div className="">
-            {this.props.castToPlay.id !== 0
-              ? null
-              : null
-            }
-          </div>
+            <span className="playback-time-info">- {renderAudioLength(this.state.remainingTime)}</span>
+
 
           <div className="playback-volume-icon" onClick={this.toggleMuteUnmute}>
             {this.props.mute
@@ -84,7 +102,8 @@ class PlaybackBar extends React.Component {
               preload="auto"
               muted={this.props.mute}
               src={this.props.castToPlay.castAudio}
-              ref={this.audioTag}>
+              ref={this.audioTag}
+              onTimeUpdate={this.updateTime}>
                 Your browser does not support this audio element.
             </audio>
           </div>
@@ -105,3 +124,11 @@ class PlaybackBar extends React.Component {
 
 
 export default PlaybackBar;
+
+
+// <div className="">
+//   {this.props.castToPlay.id !== 0
+//     ? null
+//     : null
+//   }
+// </div>
