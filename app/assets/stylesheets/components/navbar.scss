@@ -74,6 +74,10 @@
   margin-top: 12px;
 }
 
+.dropdown-btn, .dropdown-menu, {
+  cursor: pointer;
+}
+
 .dropdown-menu {
 	position: absolute;
 	top: 60px;
@@ -89,7 +93,6 @@
 	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
   font-size: 13px;
 	font-weight: 400;
-  cursor: pointer;
 }
 
 .dropdown-menu span {

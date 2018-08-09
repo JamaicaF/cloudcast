@@ -49,9 +49,15 @@ class UserEditForm extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append('user[username]', this.state.username);
-    formData.append('user[bio]', this.state.bio);
-    formData.append('user[country]', this.state.country);
-    formData.append('user[city]', this.state.city);
+    if (this.state.bio) {
+      formData.append('user[bio]', this.state.bio);
+    }
+    if (this.state.country) {
+      formData.append('user[country]', this.state.country);
+    }
+    if (this.state.city) {
+      formData.append('user[city]', this.state.city);
+    }
     if (this.state.userImgFile) {
       formData.append('user[profile_image]', this.state.userImgFile);
     }

@@ -41,7 +41,9 @@ class CastSubmitForm extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append('cast[title]', this.state.title);
-    formData.append('cast[description]', this.state.description);
+    if (this.state.description){
+      formData.append('cast[description]', this.state.description);
+    }
     if (this.state.castImgFile) {
       formData.append('cast[cast_image]', this.state.castImgFile);
     }
