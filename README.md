@@ -22,8 +22,7 @@ Users can explore and listen to all audio programming without creating an accoun
 ### Featured Cloudcasts page
 ![](https://i.imgur.com/D3SQ4cx.jpg)
 
-From any page in the site, users can create a new account or login. User sessions are authenticated in Rails using the BCrypt hashing algorithm.
-Users are required to provide a unique username and email when signing up for an account.
+From any page in the site, users can create a new account or login. 
 
 Before uploading content, users are prompted to login. Upon login, users have to option to create new Cloudcast programs, as well as update or destroy their existing content. Any existing Cloudcast can only be modified by the original content creator.   
 
@@ -38,8 +37,7 @@ Cloudcast is a single page app built with React.js and Redux. All pages are comp
 # Features in the Making:
 
 Cloudcast is an actively maintained application, and in the future, I plan to:
-- Add user profiles containing links and playback options for all of a user's uploaded audio content
 - Implement audio queuing and uninterrupted audio streaming
+- Add users comments and/or the ability to favorite Cloudcast programs
 - Include options for users to add genre tags and artist attribute metadata to their audio programs
 - Display audio metadata information during audio playback
-- Add users comments and/or the ability to favorite Cloudcast programs
