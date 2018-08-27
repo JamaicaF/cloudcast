@@ -1,6 +1,6 @@
 # Cloudcast README
 
-Cloudcast is a fullstack music streaming web application inspired by [Mixcloud](https://www.mixcloud.com/). Users can share and listen to radio shows, DJ mixes, podcasts, and other long-form audio content.
+Cloudcast is a single-page, fullstack, music streaming web application inspired by [Mixcloud](https://www.mixcloud.com/). Users can share and listen to radio shows, DJ mixes, podcasts, and other long-form audio content.
 
 [Cloudcast live site](https://cloudcast1.herokuapp.com/)
 
@@ -22,17 +22,41 @@ Users can explore and listen to all audio programming without creating an accoun
 ### Featured Cloudcasts page
 ![](https://i.imgur.com/D3SQ4cx.jpg)
 
-From any page in the site, users can create a new account or login.
-
-Before uploading content, users are prompted to login. Upon login, users have to option to create new Cloudcast programs, as well as update or destroy their existing content. Any existing Cloudcast can only be modified by the original content creator.   
+From any page in the site, users can create a new account or login, and before uploading content, users are prompted to login. Upon login, users have the option to create new Cloudcast programs, as well as update or destroy their existing content. Any existing Cloudcast can only be modified by the original content creator.   
 
 ### Backend Structure
 
-Cloudcast follows RESTful API design, and was built using the Ruby on Rails framework and a PostgreSQL database. Users and Casts are the two primary database models. Image and audio files are stored with ActiveStorage and Amazon Web Services. Data requests are made through AJAX and completed by a JSON API.
+Cloudcast follows RESTful API design, and was built using a Ruby on Rails framework and a PostgreSQL database. Users and Casts are the two primary database models, connected via ActiveRecord associations. All uploaded image and audio files are stored with ActiveStorage and Amazon Web Services S3. Data requests are made through AJAX and completed by a JSON API.
+
+```rb
+class Cast < ApplicationRecord
+  validates :title, :user_id, presence: true
+
+  before_save :ensure_cast_audio, :ensure_cast_image
+
+  belongs_to :user
+
+  has_one_attached :cast_audio
+  has_one_attached :cast_image
+
+  def ensure_cast_audio
+    unless self.cast_audio.attached?
+      errors[:cast_audio] << "must be attached"
+    end
+  end
+
+  def ensure_cast_image
+    unless self.cast_image.attached?
+      self.cast_image.attach(io: File.open('app/assets/images/cloud_default.jpg'),
+        filename: 'cloud_default.jpg')
+    end
+  end
+end
+```
 
 ### Frontend Structure
 
-Cloudcast is a single page app built with React.js and Redux. All pages are composed of React components which are rendered at a root url.
+Cloudcast is a single page app built with React.js and Redux. All pages are composed of React components which are rendered at a root url. 
 
 # Features in the Making:
 
