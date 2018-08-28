@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import renderAudioLength from '../../util/util_util';
+import renderAudioLength from '../../util/formatter_util';
 
 class PlaybackBar extends React.Component {
   constructor(props) {
@@ -82,7 +82,7 @@ class PlaybackBar extends React.Component {
 
           <div className="playback-volume-icon" onClick={this.toggleMuteUnmute}>
             {this.props.mute
-              ? <i class="fas fa-volume-off"></i>
+              ? <i className="fas fa-volume-off"></i>
               : <i className="fas fa-volume-up"></i>
             }
           </div>
@@ -114,11 +114,3 @@ class PlaybackBar extends React.Component {
 }
 
 export default PlaybackBar;
-
-
-// <div className="">
-//   {this.props.castToPlay.id !== 0
-//     ? null
-//     : null
-//   }
-// </div>
