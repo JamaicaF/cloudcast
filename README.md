@@ -17,12 +17,12 @@ Cloudcast is and will remain open source.
 ### Welcome page
 ![](https://i.imgur.com/FYfr5FF.jpg)
 
-Users can explore and listen to all audio programming without creating an account. Cloudcast programs are primarily accessible from an indexed list of audio content. Upon first play, an audio playback bar loads at the bottom of the page, which persists as the user navigates the site.
+Users can explore and listen to all audio programming without creating an account. Cloudcast programs are primarily accessible from an indexed list of featured audio content. Upon first play, an audio playback bar loads at the bottom of the page, which persists as the user navigates the site.
 
 ### Featured Cloudcasts page
 ![](https://i.imgur.com/D3SQ4cx.jpg)
 
-From any page in the site, users can create a new account or login, and before uploading content, users are prompted to login. Upon login, users have the option to create new Cloudcast programs, as well as update or destroy their existing content. Any existing Cloudcast can only be modified by the original content creator.   
+From any page in the site, users can create a new account or login, and before uploading content, users are prompted to login. Upon login, users have the option to create new Cloudcast programs, as well as update or destroy their existing content. Any existing Cloudcast program can only be modified by the user who originally contributed it.   
 
 ### Backend Structure
 
@@ -41,7 +41,7 @@ class Cast < ApplicationRecord
 
   def ensure_cast_audio
     unless self.cast_audio.attached?
-      errors[:cast_audio] << "must be attached"
+      errors[:cast_audio] << "Audio must be attached"
     end
   end
 
@@ -56,17 +56,78 @@ end
 
 ### Frontend Structure
 
-Cloudcast is a single page app built with React.js and Redux. All pages are composed of React components which are rendered at a root url. Users can
-access uploaded audio content for playback either via the 'featured' audio program feed, dedicated individual program pages, or through user profile pages.
+Cloudcast is a single page app built with React.js and Redux. All pages are composed of React components, which are rendered at a root url. Users can
+access uploaded audio content for playback via either the featured audio program feed, dedicated individual program pages, or through user profile pages.
 
+To integrate the different methods for triggering playback, and also to facilitate uninterrupted playback across the app, the Redux store contains current playback state.
+
+```js
+const defaultState = {
+  displayPlaybackBar: false,
+  playback: false,
+  playbackId: 0,
+  muteAudio: false
+};
+
+export default (state = defaultState, action) => {
+  Object.freeze(state);
+  const newState = merge({}, state);
+  switch (action.type) {
+    case RECEIVE_PLAYBACK_CAST:
+      newState.playbackId = action.playbackId;
+      newState.displayPlaybackBar = true;
+      return newState;
+    case TOGGLE_PLAY_PAUSE:
+      newState.playback = !newState.playback;
+      return newState;
+    case TOGGLE_MUTE_UNMUTE:
+      newState.muteAudio = !newState.muteAudio;
+      return newState;
+    default:
+      return state;
+  }
+};
+```
+
+The app's `PlaybackBar` component receives this information through props,
+and current playback state is updated as a user selects play or pause for each  audio program.  
+
+```js
+class PlaybackBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      elapsedTime: 0,
+      percentPlayed: 0,
+    };
+    this.audioTag = React.createRef();
+    this.togglePlayPause = this.togglePlayPause.bind(this);
+    this.toggleMuteUnmute = this.toggleMuteUnmute.bind(this);
+    this.updateTime = this.updateTime.bind(this);
+  }
+
+  componentDidUpdate(oldProps) {
+    if (this.props.playback && !oldProps.playback) {
+      this.audioTag.current.play();
+    } else if (oldProps.playbackId != this.props.playbackId) {
+      this.props.togglePlayPause();
+    } else if (!this.props.playback && oldProps.playback) {
+      this.audioTag.current.pause();
+    }
+  }
+  ...
+}
+```
+
+Real-time audio playback is implemented with an HTML5 Audio element.
 
 # Features in the Making:
 
 Cloudcast is an actively maintained application, and in the future, I plan to:
-- Implement audio queuing and uninterrupted audio streaming
-- Add users comments and/or the ability to favorite Cloudcast programs
-- Include options for users to add genre tags and artist attribute metadata to their audio programs
-- Display audio metadata information during audio playback
+- Implement audio queuing for continuous audio streaming
+- Add user comments and the option to favorite Cloudcast programs
+- Include options for audio program genre tags and artist attribute metadata
+- Display enhanced audio metadata information during audio playback
 
 # Acknowledgements:
 
