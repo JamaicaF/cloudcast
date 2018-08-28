@@ -56,7 +56,9 @@ end
 
 ### Frontend Structure
 
-Cloudcast is a single page app built with React.js and Redux. All pages are composed of React components which are rendered at a root url. 
+Cloudcast is a single page app built with React.js and Redux. All pages are composed of React components which are rendered at a root url. Users can
+access uploaded audio content for playback either via the 'featured' audio program feed, dedicated individual program pages, or through user profile pages.
+
 
 # Features in the Making:
 
